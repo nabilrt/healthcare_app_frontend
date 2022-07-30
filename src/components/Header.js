@@ -13,6 +13,8 @@ import DocDash from "./doctor/DocDash";
 import PatientDash from "./patient/PatientDash";
 import SellerDash from "./seller/SellerDash";
 import AdminDash from "./admin/AdminDash";
+import DocInbox from "./doctor/DocInbox";
+import DocEarning from "./doctor/DocEarning";
 
 var token = null;
 if(localStorage.getItem('doctor')){
@@ -38,6 +40,8 @@ function Header(){
                 <Route path="/patient/dashboard" element={<PatientDash/>}></Route>
                 <Route path="/seller/dashboard" element={<SellerDash/>}></Route>
                 <Route path="/admin/dashboard" element={<AdminDash/>}></Route>
+                <Route path="/doctor/inbox" element={<DocInbox/>}></Route>
+                <Route path="/doctor/earnings" element={<DocEarning/>}></Route>
                 <Route path="/logout" element={<Login/>}></Route>
             </Routes>
         </div>

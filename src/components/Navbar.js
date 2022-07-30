@@ -33,9 +33,56 @@ const Navbar = () =>{
             </div>
 
         )
-    }else if(status==="Yes"){
+    }else if(status==="Doctor"){
         return (
-            <div>Hello</div>
+            <div className="container">
+                <br/>
+
+
+                <div className="btn-group">
+                    <Link to="/doctor/dashboard" className="btn btn-outline-primary">Dashboard</Link>
+                    <Link to="/doctor/inbox" className="btn btn-outline-primary">Inbox</Link>
+                    <Link to="/doctor/earnings" className="btn btn-outline-primary">Earnings</Link>
+                </div>
+
+
+            </div>
+        )
+    }
+    else if(status==="Seller"){
+        return (
+            <div className="container">
+                <br/>
+
+                <h4>Seller Dashboard</h4>
+
+
+
+
+            </div>
+        )
+    }
+    else if(status==="Patient"){
+        return (
+            <div className="container">
+                <br/>
+
+                <h4>Patient Dashboard</h4>
+
+
+
+
+            </div>
+        )
+    }
+    else if(status==="Admin"){
+        return (
+            <div className="container">
+                <br/>
+
+                <h4>Admin Dashboard</h4>
+
+            </div>
         )
     }
 

@@ -24,6 +24,7 @@ const DocDash = () =>{
 
     return(
         <div className="container">
+            <br/>
             <h4>Welcome to Doctor Dashboard</h4> <br/>
             <Link to="/logout" onClick={logout} className="btn btn-outline-danger">Logout</Link>
         </div>
