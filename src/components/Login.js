@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
+import Header from "./Header";
 
 const Login = () =>{
    // let[token, setToken]= useState("");
@@ -32,6 +33,9 @@ const Login = () =>{
                     history('/admin/dashboard');
                 }
                 //console.log('Login');
+                if(token==="No User Found"){
+                    document.getElementById('msg').innerHTML="No User Found";
+                }
 
             }).catch(err=>{
             console.log(err);
@@ -43,6 +47,8 @@ const Login = () =>{
     return (
         <div className="container">
             <br/>
+
+            <br/>
             <h3>Login to your system</h3>
             <small>Enter correct credentials to login</small> <br/> <br/>
             <form className="form-group">
@@ -51,7 +57,10 @@ const Login = () =>{
                 <label htmlFor="pass">Password</label><br/>
                 <input type="password" name="pass" value={password} id="pass" onChange={(e)=>setPassword(e.target.value)} className="form-control-sm" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"/>
             </form> <br/>
-            <button type="button" onClick={loginSubmit} className="btn btn-outline-info">Login</button>
+            <button type="button" onClick={loginSubmit} className="btn btn-outline-info">Login</button> <br/>
+            <span className="text-danger">
+                <p id="msg"></p>
+            </span>
         </div>
     )
 }

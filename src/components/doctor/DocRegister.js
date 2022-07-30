@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from "../Header";
 
 const DocRegister = () =>{
     const [passwordShown, setPasswordShown] = useState(false);
@@ -15,6 +16,7 @@ const DocRegister = () =>{
 
     return (
         <div className="container">
+
             <br/>
             <h4>Doctor Registration Form</h4>
             <small>Please enter correct details</small> <br/> <br/>
