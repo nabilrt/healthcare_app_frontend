@@ -1,10 +1,12 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from "./Header";
 
 const Home = () => {
 
     return (
         <div className="container">
+
             <br/>
             <br/>
             <h4>Welcome to AS Health Care App</h4> <br/>

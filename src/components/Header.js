@@ -9,8 +9,18 @@ import Login from "./Login";
 import About from "./About";
 import DocRegister from "./doctor/DocRegister";
 import PatientRegister from "./patient/PatientRegister";
+import DocDash from "./doctor/DocDash";
+import PatientDash from "./patient/PatientDash";
+import SellerDash from "./seller/SellerDash";
+import AdminDash from "./admin/AdminDash";
 
+var token = null;
+if(localStorage.getItem('doctor')){
+    var obj = JSON.parse(localStorage.getItem('doctor'));
+    token = obj.token;
+}
 axios.defaults.baseURL="http://127.0.0.1:8000/api/";
+axios.defaults.headers.common["Authorization"] = token;
 
 function Header(){
     return (
@@ -24,6 +34,11 @@ function Header(){
                 <Route path="/about" element={<About/>}></Route>
                 <Route path="/register/doctor" element={<DocRegister/>}></Route>
                 <Route path="/register/patient" element={<PatientRegister/>}></Route>
+                <Route path="/doctor/dashboard" element={<DocDash/>}></Route>
+                <Route path="/patient/dashboard" element={<PatientDash/>}></Route>
+                <Route path="/seller/dashboard" element={<SellerDash/>}></Route>
+                <Route path="/admin/dashboard" element={<AdminDash/>}></Route>
+                <Route path="/logout" element={<Login/>}></Route>
             </Routes>
         </div>
     )
