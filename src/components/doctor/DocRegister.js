@@ -33,18 +33,10 @@ const DocRegister = () =>{
         var obj={name: name,email:email,pass:pass,gender:gender,type:type,speciality:speciality,dp:dp,degree:degree};
         axios.post("http://127.0.0.1:8000/api/register/doctor",obj)
             .then(resp=>{
-                var token = resp.data;
-                console.log(token);
-                var user = {user_Id: token.user_id, access_token:token.token, type:token.type};
-                localStorage.setItem('user',JSON.stringify(user));
                 history("/verify");
             }).catch(err=>{
             console.log(err.response.data);
         });
-
-
-
-
     }
 
     return (
