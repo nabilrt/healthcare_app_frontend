@@ -16,6 +16,7 @@ import AdminDash from "./admin/AdminDash";
 import DocInbox from "./doctor/DocInbox";
 import DocEarning from "./doctor/DocEarning";
 import Verify from "./Verify";
+import Logout from "./Logout";
 
 var token = null;
 if(localStorage.getItem('doctor')){
@@ -43,7 +44,7 @@ function Header(){
                 <Route path="/admin/dashboard" element={<AdminDash/>}></Route>
                 <Route path="/doctor/inbox" element={<DocInbox/>}></Route>
                 <Route path="/doctor/earnings" element={<DocEarning/>}></Route>
-                <Route path="/logout" element={<Login/>}></Route>
+                <Route path="/logout" element={<Logout/>}></Route>
                 <Route path="/verify" element={<Verify/>}></Route>
             </Routes>
         </div>

@@ -43,6 +43,7 @@ const Navbar = () =>{
                     <Link to="/doctor/dashboard" className="btn btn-outline-primary">Dashboard</Link>
                     <Link to="/doctor/inbox" className="btn btn-outline-primary">Inbox</Link>
                     <Link to="/doctor/earnings" className="btn btn-outline-primary">Earnings</Link>
+                    <Link to="/logout" className="btn btn-outline-primary">Logout</Link>
                 </div>
 
 
