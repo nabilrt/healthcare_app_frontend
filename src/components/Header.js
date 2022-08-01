@@ -17,6 +17,8 @@ import DocInbox from "./doctor/DocInbox";
 import DocEarning from "./doctor/DocEarning";
 import Verify from "./Verify";
 import Logout from "./Logout";
+import PatientInbox from "./patient/PatientInbox";
+import Shop from "./patient/Shop";
 
 var token = null;
 if(localStorage.getItem('doctor')){
@@ -46,6 +48,8 @@ function Header(){
                 <Route path="/doctor/earnings" element={<DocEarning/>}></Route>
                 <Route path="/logout" element={<Logout/>}></Route>
                 <Route path="/verify" element={<Verify/>}></Route>
+                <Route path="/patient/inbox" element={<PatientInbox/>}></Route>
+                <Route path="/patient/shop" element={<Shop/>}></Route>
             </Routes>
         </div>
     )

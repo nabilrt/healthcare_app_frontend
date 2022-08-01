@@ -10,7 +10,7 @@ const Verify = () =>{
     const OTPVerify = () =>{
 
         var obj = {otp: otp};
-        axios.post("http://127.0.0.1:8000/api/doctor/verification",obj)
+        axios.post("http://127.0.0.1:8000/api/user/verification",obj)
             .then(resp=>{
                 var otp = resp.data;
                 console.log(otp);
