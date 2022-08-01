@@ -68,9 +68,13 @@ const Navbar = () =>{
             <div className="container">
                 <br/>
 
-                <h4>Patient Dashboard</h4>
 
-
+                <div className="btn-group">
+                    <Link to="/patient/dashboard" className="btn btn-outline-primary">Dashboard</Link>
+                    <Link to="/patient/inbox" className="btn btn-outline-primary">Inbox</Link>
+                    <Link to="/patient/shop" className="btn btn-outline-primary">Shop</Link>
+                    <Link to="/logout" className="btn btn-outline-primary">Logout</Link>
+                </div>
 
 
             </div>
