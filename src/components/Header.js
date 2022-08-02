@@ -19,6 +19,9 @@ import Verify from "./Verify";
 import Logout from "./Logout";
 import PatientInbox from "./patient/PatientInbox";
 import Shop from "./patient/Shop";
+import DocConv from "./doctor/DocConv";
+import DocReply from "./doctor/DocReply";
+import DocNewMessage from "./doctor/DocNewMessage";
 
 var token = null;
 if(localStorage.getItem('doctor')){
@@ -50,6 +53,9 @@ function Header(){
                 <Route path="/verify" element={<Verify/>}></Route>
                 <Route path="/patient/inbox" element={<PatientInbox/>}></Route>
                 <Route path="/patient/shop" element={<Shop/>}></Route>
+                <Route path="/doctor/inbox/:id" element={<DocConv/>}></Route>
+                <Route path="/doctor/conversation/reply/:id" element={<DocReply/>}></Route>
+                <Route path="/doctor/conversation/message/new/:id" element={<DocNewMessage/>}></Route>
             </Routes>
         </div>
     )
