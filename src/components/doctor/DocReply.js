@@ -14,7 +14,7 @@ const DocReply = () =>{
         let obj={reply:reply,c_id:id};
         axios.post("http://127.0.0.1:8000/api/doctor/convo/reply",obj)
             .then(resp=>{
-                history("/doctor/inbox");
+                history("/doctor/inbox/"+id);
             }).catch(err=>{
             console.log(err.response.data);
         });
