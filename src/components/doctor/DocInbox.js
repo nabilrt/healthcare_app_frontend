@@ -25,8 +25,6 @@ const DocInbox = () =>{
 
     },[]);
 
-
-
     return(
         <div className="container">
             <br/>

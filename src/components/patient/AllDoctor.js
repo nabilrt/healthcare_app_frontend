@@ -38,9 +38,7 @@ const AllDoctor = () => {
                             <td>{item.doctor_name}</td>
                             <td>{item.doctor_type}</td>
                             <td>{item.doctor_specialty}</td>
-                            <td>{item.visit}$</td>
-
-
+                            <td>{<s>{item.visit}</s>}{item.visit - (item.visit * (item.discount_per)/100)}$</td>
                             <br/>
                         </tr>
                     ))

@@ -40,16 +40,11 @@ const DocProfile = () =>{
             console.log(resp.data);
             history("/doctor/profile");
 
-            //   setInbox(resp.data);
-
         }).catch(
             err=>{
                 history('/login');
                 console.log(err.response.data);
             });
-
-
-
     }
 
     return (
