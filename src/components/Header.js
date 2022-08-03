@@ -29,6 +29,11 @@ import Issues from "./doctor/Issues";
 import DocProfile from "./doctor/DocProfile";
 import DocNotice from "./doctor/DocNotice";
 import PatientProfile from "./patient/PatientProfile";
+import PatientConv from "./patient/PatientConv";
+import PatientReply from "./patient/PatientReply";
+import PatientNewMessage from "./patient/PatientNewMessage";
+import PatientNotice from "./patient/PatientNotice";
+import Doctors from "./patient/Doctors";
 
 var token = null;
 if(localStorage.getItem('doctor')){
@@ -72,6 +77,17 @@ function Header(){
 
                 <Route path="/doctor/notices" element={<DocNotice/>}></Route>
                 <Route path="/patient/profile" element={<PatientProfile/>}></Route>
+                <Route path="/patient/inbox/:id" element={<PatientConv/>}></Route>
+                <Route path="/patient/conversation/reply/:id" element={<PatientReply/>}></Route>
+                <Route path="/patient/conversation/message/new/:id" element={<PatientNewMessage/>}></Route>
+                <Route path="/patient/notices" element={<PatientNotice/>}></Route>
+                <Route path="/patient/doctors/all" element={<Doctors/>}></Route>
+
+
+
+
+
+
 
             </Routes>
         </div>
