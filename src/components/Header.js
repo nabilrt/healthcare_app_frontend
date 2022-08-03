@@ -22,6 +22,7 @@ import Shop from "./patient/Shop";
 import DocConv from "./doctor/DocConv";
 import DocReply from "./doctor/DocReply";
 import DocNewMessage from "./doctor/DocNewMessage";
+import DocAppointments from "./doctor/DocAppointments";
 
 var token = null;
 if(localStorage.getItem('doctor')){
@@ -56,6 +57,7 @@ function Header(){
                 <Route path="/doctor/inbox/:id" element={<DocConv/>}></Route>
                 <Route path="/doctor/conversation/reply/:id" element={<DocReply/>}></Route>
                 <Route path="/doctor/conversation/message/new/:id" element={<DocNewMessage/>}></Route>
+                <Route path="/doctor/appointments" element={<DocAppointments/>}></Route>
             </Routes>
         </div>
     )

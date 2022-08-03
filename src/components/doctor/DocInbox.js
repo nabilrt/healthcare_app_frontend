@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 import {Link} from "react-router-dom";
@@ -10,14 +10,20 @@ const DocInbox = () =>{
     let user = JSON.parse(localStorage.getItem('doctor'));
     var obj={token:user.access_token};
 
-    axios.post('http://127.0.0.1:8000/api/doctor/inbox',obj).then(resp=>{
-        console.log(resp.data);
-        setInbox(resp.data);
+    useEffect(()=>{
 
-    }).catch(
-        err=>{
-            console.log(err.response.data);
-        });
+        axios.post('http://127.0.0.1:8000/api/doctor/inbox',obj).then(resp=>{
+            console.log(resp.data);
+            setInbox(resp.data);
+
+        }).catch(
+            err=>{
+                console.log(err.response.data);
+            });
+
+    },[]);
+
+
 
     return(
         <div className="container">
