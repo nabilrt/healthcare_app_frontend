@@ -26,6 +26,8 @@ import DocAppointments from "./doctor/DocAppointments";
 import DocPayment from "./doctor/DocPayment";
 import MedHistory from "./doctor/MedHistory";
 import Issues from "./doctor/Issues";
+import DocProfile from "./doctor/DocProfile";
+import DocNotice from "./doctor/DocNotice";
 
 var token = null;
 if(localStorage.getItem('doctor')){
@@ -65,6 +67,8 @@ function Header(){
                 <Route path="/doctor/remuneration" element={<DocPayment/>}></Route>
                 <Route path="/doctor/medical/histories" element={<MedHistory/>}></Route>
                 <Route path="/doctor/medical/history/:id" element={<Issues/>}></Route>
+                <Route path="/doctor/profile" element={<DocProfile/>}></Route>
+                <Route path="/doctor/notices" element={<DocNotice/>}></Route>
             </Routes>
         </div>
     )

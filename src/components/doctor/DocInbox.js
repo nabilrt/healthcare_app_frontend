@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 const DocInbox = () =>{
 
@@ -9,6 +9,7 @@ const DocInbox = () =>{
 
     let user = JSON.parse(localStorage.getItem('doctor'));
     var obj={token:user.access_token};
+    let history=useNavigate();
 
     useEffect(()=>{
 
@@ -18,6 +19,7 @@ const DocInbox = () =>{
 
         }).catch(
             err=>{
+               // history('/login');
                 console.log(err.response.data);
             });
 

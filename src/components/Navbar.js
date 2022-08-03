@@ -65,6 +65,8 @@ const Navbar = () =>{
                     <Link to="/doctor/appointments" className="btn btn-outline-primary">Appointments</Link>
                     <Link to="/doctor/remuneration" className="btn btn-outline-primary">Remuneration</Link>
                     <Link to="/doctor/medical/histories" className="btn btn-outline-primary">Medical History</Link>
+                    <Link to="/doctor/notices" className="btn btn-outline-primary">Notices</Link>
+                    <Link to="/doctor/profile" className="btn btn-outline-primary">Profile</Link>
                     <Link to="/logout" className="btn btn-outline-primary" onClick={refreshPage}>Logout</Link>
                 </div>
 
@@ -95,7 +97,7 @@ const Navbar = () =>{
                     <Link to="/patient/dashboard" className="btn btn-outline-primary">Dashboard</Link>
                     <Link to="/patient/inbox" className="btn btn-outline-primary">Inbox</Link>
                     <Link to="/patient/shop" className="btn btn-outline-primary">Shop</Link>
-                    <Link to="/logout" className="btn btn-outline-primary">Logout</Link>
+                    <Link to="/logout" className="btn btn-outline-primary" onClick={refreshPage}>Logout</Link>
                 </div>
 
 
