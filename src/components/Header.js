@@ -39,6 +39,7 @@ function Header(){
     return (
         <div className="container">
             <Navbar/>
+
             <Routes>
                 <Route index element={<Home />} />
                 <Route path="/home" element={<Home/>}/>

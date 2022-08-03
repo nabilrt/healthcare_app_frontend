@@ -1,10 +1,12 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import GenericHeader from "./headers/GenericHeader";
 
 const Home = () => {
 
     return (
         <div className="container">
+
 
             <br/>
             <br/>

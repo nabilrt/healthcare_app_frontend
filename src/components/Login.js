@@ -10,6 +10,13 @@ const Login = () =>{
     let[password, setPassword] =useState("");
     const history = useNavigate();
 
+    function refreshPage() {
+        setTimeout(()=>{
+            window.location.reload(false);
+        }, 500);
+        console.log('page to reload')
+    }
+
 
     const loginSubmit= ()=>{
         var obj = {username: name, password: password};
@@ -18,21 +25,37 @@ const Login = () =>{
                 var token = resp.data;
                 console.log(token);
                 if(token==="Not Verified"){
-                    history('/verify');
+                   history('/verify');
                 }else if(token!==""){
                     var doctor = {docId: token.user_id, access_token:token.token, token_type:token.token_for};
                     localStorage.setItem('doctor',JSON.stringify(doctor));
                     // console.log(localStorage.getItem('user'));
                     if(token.token_for==="Doctor"){
+                        setTimeout(()=>{
+                            window.location.reload(false);
+                        }, 500);
+                        console.log('page to reload');
                         history('/doctor/dashboard');
                     }
                     if(token.token_for==="Patient"){
+                        setTimeout(()=>{
+                            window.location.reload(false);
+                        }, 500);
+                        console.log('page to reload');
                         history('/patient/dashboard');
                     }
                     if(token.token_for==="Seller"){
+                        setTimeout(()=>{
+                            window.location.reload(false);
+                        }, 500);
+                        console.log('page to reload');
                         history('/seller/dashboard');
                     }
                     if(token.token_for==="Admin"){
+                        setTimeout(()=>{
+                            window.location.reload(false);
+                        }, 500);
+                        console.log('page to reload');
                         history('/admin/dashboard');
                     }
                     //console.log('Login');

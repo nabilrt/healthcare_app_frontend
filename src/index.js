@@ -6,12 +6,13 @@ import reportWebVitals from './reportWebVitals';
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import {BrowserRouter} from "react-router-dom";
+import Home from "./components/Home";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
       <BrowserRouter>
-          <Header></Header>
+        <Header></Header>
 
       </BrowserRouter>
       <Footer/>
