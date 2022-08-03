@@ -17,25 +17,30 @@ const Login = () =>{
             .then(resp=>{
                 var token = resp.data;
                 console.log(token);
-                var doctor = {docId: token.user_id, access_token:token.token, token_type:token.token_for};
-                localStorage.setItem('doctor',JSON.stringify(doctor));
-                // console.log(localStorage.getItem('user'));
-                if(token.token_for==="Doctor"){
-                   history('/doctor/dashboard');
-               }
-                if(token.token_for==="Patient"){
-                    history('/patient/dashboard');
+                if(token==="Not Verified"){
+                    history('/verify');
+                }else if(token!==""){
+                    var doctor = {docId: token.user_id, access_token:token.token, token_type:token.token_for};
+                    localStorage.setItem('doctor',JSON.stringify(doctor));
+                    // console.log(localStorage.getItem('user'));
+                    if(token.token_for==="Doctor"){
+                        history('/doctor/dashboard');
+                    }
+                    if(token.token_for==="Patient"){
+                        history('/patient/dashboard');
+                    }
+                    if(token.token_for==="Seller"){
+                        history('/seller/dashboard');
+                    }
+                    if(token.token_for==="Admin"){
+                        history('/admin/dashboard');
+                    }
+                    //console.log('Login');
+                    if(token==="No User Found"){
+                        document.getElementById('msg').innerHTML="No User Found";
+                    }
                 }
-                if(token.token_for==="Seller"){
-                    history('/seller/dashboard');
-                }
-                if(token.token_for==="Admin"){
-                    history('/admin/dashboard');
-                }
-                //console.log('Login');
-                if(token==="No User Found"){
-                    document.getElementById('msg').innerHTML="No User Found";
-                }
+
 
             }).catch(err=>{
             console.log(err);

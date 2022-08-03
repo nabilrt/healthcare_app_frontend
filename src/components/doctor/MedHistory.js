@@ -1,19 +1,18 @@
 import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {Link} from "react-router-dom";
 import axios from "axios";
 
-const DocEarning = () =>{
-
-    const[earning,setEarning]=useState([]);
-
+const MedHistory = () =>{
+    const[medHistory,setMedHistory]=useState([]);
     let user = JSON.parse(localStorage.getItem('doctor'));
     var obj={token:user.access_token};
 
     useEffect(()=>{
 
-        axios.post('http://127.0.0.1:8000/api/doctor/earnings',obj).then(resp=>{
+        axios.post('http://127.0.0.1:8000/api/doctor/medical/histories',obj).then(resp=>{
             console.log(resp.data);
-            setEarning(resp.data);
+            setMedHistory(resp.data);
 
         }).catch(
             err=>{
@@ -22,31 +21,34 @@ const DocEarning = () =>{
 
     },[]);
 
+
     return(
         <div className="container">
             <br/>
-            <h4>Earning Details</h4>
-            <small>Checkout your earnings</small> <br/> <br/>
+            <h4>Patient's Medical Histories</h4>
+            <small>Contains all the patient's medical history</small> <br/> <br/>
             <table className="table table-bordered">
                 <tr className="table-primary">
+                    <th className="table-primary">History ID</th>
+                    <th className="table-primary">Issues</th>
                     <th className="table-primary">Appointment ID</th>
                     <th className="table-primary">Patient ID</th>
-                    <th className="table-primary">Amount</th>
-
                 </tr>
                 {
-                   earning.map((item, i) => (
+                    medHistory.map((item, i) => (
                         <tr key={i}>
+                            <td>{item.his_id}</td>
+                            <td><Link to={"/doctor/medical/history/"+item.his_id} className="btn btn-info">Check</Link></td>
                             <td>{item.appointment_id}</td>
                             <td>{item.patient_id}</td>
-                            <td>{item.paid_amount}$</td>
                             <br/>
                         </tr>
                     ))
                 }
             </table>
+
         </div>
     )
 }
 
-export default DocEarning;
+export default MedHistory;
