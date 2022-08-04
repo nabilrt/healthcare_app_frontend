@@ -34,6 +34,10 @@ import PatientReply from "./patient/PatientReply";
 import PatientNewMessage from "./patient/PatientNewMessage";
 import PatientNotice from "./patient/PatientNotice";
 import Doctors from "./patient/Doctors";
+import DocReview from "./doctor/DocReview";
+import DocPrevReview from "./doctor/DocPrevReview";
+import PatientReview from "./patient/PatientReview";
+import PatientPrevReview from "./patient/PatientPrevReview";
 
 var token = null;
 if(localStorage.getItem('doctor')){
@@ -56,16 +60,12 @@ function Header(){
                 <Route path="/about" element={<About/>}></Route>
                 <Route path="/register/doctor" element={<DocRegister/>}></Route>
                 <Route path="/register/patient" element={<PatientRegister/>}></Route>
-                <Route path="/doctor/dashboard" element={<DocDash/>}></Route>
-                <Route path="/patient/dashboard" element={<PatientDash/>}></Route>
-                <Route path="/seller/dashboard" element={<SellerDash/>}></Route>
-                <Route path="/admin/dashboard" element={<AdminDash/>}></Route>
-                <Route path="/doctor/inbox" element={<DocInbox/>}></Route>
-                <Route path="/doctor/earnings" element={<DocEarning/>}></Route>
                 <Route path="/logout" element={<Logout/>}></Route>
                 <Route path="/verify" element={<Verify/>}></Route>
-                <Route path="/patient/inbox" element={<PatientInbox/>}></Route>
-                <Route path="/patient/shop" element={<Shop/>}></Route>
+
+                <Route path="/doctor/dashboard" element={<DocDash/>}></Route>
+                <Route path="/doctor/inbox" element={<DocInbox/>}></Route>
+                <Route path="/doctor/earnings" element={<DocEarning/>}></Route>
                 <Route path="/doctor/inbox/:id" element={<DocConv/>}></Route>
                 <Route path="/doctor/conversation/reply/:id" element={<DocReply/>}></Route>
                 <Route path="/doctor/conversation/message/new/:id" element={<DocNewMessage/>}></Route>
@@ -74,14 +74,25 @@ function Header(){
                 <Route path="/doctor/medical/histories" element={<MedHistory/>}></Route>
                 <Route path="/doctor/medical/history/:id" element={<Issues/>}></Route>
                 <Route path="/doctor/profile" element={<DocProfile/>}></Route>
-
                 <Route path="/doctor/notices" element={<DocNotice/>}></Route>
+                <Route path="/doctor/review/post" element={<DocReview/>}></Route>
+                <Route path="/doctor/review/all" element={<DocPrevReview/>}></Route>
+
+                <Route path="/patient/dashboard" element={<PatientDash/>}></Route>
+                <Route path="/patient/inbox" element={<PatientInbox/>}></Route>
+                <Route path="/patient/shop" element={<Shop/>}></Route>
                 <Route path="/patient/profile" element={<PatientProfile/>}></Route>
                 <Route path="/patient/inbox/:id" element={<PatientConv/>}></Route>
                 <Route path="/patient/conversation/reply/:id" element={<PatientReply/>}></Route>
                 <Route path="/patient/conversation/message/new/:id" element={<PatientNewMessage/>}></Route>
                 <Route path="/patient/notices" element={<PatientNotice/>}></Route>
                 <Route path="/patient/doctors/all" element={<Doctors/>}></Route>
+                <Route path="/patient/review/post" element={<PatientReview/>}></Route>
+                <Route path="/patient/review/all" element={<PatientPrevReview/>}></Route>
+
+                <Route path="/seller/dashboard" element={<SellerDash/>}></Route>
+
+                <Route path="/admin/dashboard" element={<AdminDash/>}></Route>
 
 
 
