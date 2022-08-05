@@ -19,7 +19,7 @@ const DocInbox = () =>{
 
         }).catch(
             err=>{
-               // history('/login');
+                history('/login');
                 console.log(err.response.data);
             });
 

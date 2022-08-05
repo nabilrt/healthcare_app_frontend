@@ -38,6 +38,17 @@ import DocReview from "./doctor/DocReview";
 import DocPrevReview from "./doctor/DocPrevReview";
 import PatientReview from "./patient/PatientReview";
 import PatientPrevReview from "./patient/PatientPrevReview";
+import SellerProfile from "./seller/SellerProfile";
+import SellerNotice from "./seller/SellerNotice";
+import SellerEarnings from "./seller/SellerEarnings";
+import OrderDetails from "./seller/OrderDetails";
+import OrderHistory from "./seller/OrderHistory";
+import UpdateOrder from "./seller/UpdateOrder";
+import AddMedicine from "./seller/AddMedicine";
+import ManageMedicines from "./seller/ManageMedicines";
+import EditMedicine from "./seller/EditMedicine";
+import DeleteMedicine from "./seller/DeleteMedicine";
+import SearchMedicine from "./seller/SearchMedicine";
 
 var token = null;
 if(localStorage.getItem('doctor')){
@@ -91,6 +102,17 @@ function Header(){
                 <Route path="/patient/review/all" element={<PatientPrevReview/>}></Route>
 
                 <Route path="/seller/dashboard" element={<SellerDash/>}></Route>
+                <Route path="/seller/pr" element={<SellerProfile/>}/>
+                <Route path="/seller/notices" element={<SellerNotice/>}/>
+                <Route path="/seller/earnings" element={<SellerEarnings/>}/>
+                <Route exact path="/seller/earnings/:id" element={<OrderDetails/>}/>
+                <Route path="/seller/order/history" element={<OrderHistory/>}/>
+                <Route path="/seller/order/update/:id" element={<UpdateOrder/>}/>
+                <Route path="/seller/medicines/add" element={<AddMedicine/>}/>
+                <Route path="/seller/medicines/all" element={<ManageMedicines/>}/>
+                <Route path="/seller/medicine/update/:id" element={<EditMedicine/>}/>
+                <Route path="/seller/medicine/delete/:id" element={<DeleteMedicine/>}/>
+                <Route path="/seller/medicine/search" element={<SearchMedicine/>}></Route>
 
                 <Route path="/admin/dashboard" element={<AdminDash/>}></Route>
 

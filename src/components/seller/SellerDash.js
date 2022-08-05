@@ -24,8 +24,8 @@ const SellerDash = () =>{
 
     return(
         <div className="container">
+            <br/>
             <h4>Welcome to Seller Dashboard</h4> <br/>
-            <Link to="/logout" onClick={logout} className="btn btn-outline-danger">Logout</Link>
         </div>
     )
 }
