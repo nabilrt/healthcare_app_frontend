@@ -124,7 +124,11 @@ const Navbar = () =>{
             <div className="container">
                 <br/>
 
-                <h4>Admin Dashboard</h4>
+                <div className="btn-group">
+                    <Link to="/admin/dashboard" className="btn btn-outline-primary">Dashboard</Link>
+                    <Link to="/admin/profile" className="btn btn-outline-primary">Profile</Link>
+                    <Link to="/logout" className="btn btn-outline-primary" onClick={refreshPage}>Logout</Link>
+                </div>
 
             </div>
         )

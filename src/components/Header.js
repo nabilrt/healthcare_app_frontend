@@ -49,6 +49,7 @@ import ManageMedicines from "./seller/ManageMedicines";
 import EditMedicine from "./seller/EditMedicine";
 import DeleteMedicine from "./seller/DeleteMedicine";
 import SearchMedicine from "./seller/SearchMedicine";
+import AdminProfile from "./admin/AdminProfile";
 
 var token = null;
 if(localStorage.getItem('doctor')){
@@ -114,7 +115,8 @@ function Header(){
                 <Route path="/seller/medicine/delete/:id" element={<DeleteMedicine/>}/>
                 <Route path="/seller/medicine/search" element={<SearchMedicine/>}></Route>
 
-                <Route path="/admin/dashboard" element={<AdminDash/>}></Route>
+                <Route path="/admin/dashboard" element={<AdminDash/>}/>
+                <Route path="/admin/profile" element={<AdminProfile/>}/>
 
 
 
