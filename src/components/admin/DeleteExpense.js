@@ -1,0 +1,29 @@
+import React, {useEffect} from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {useNavigate, useParams} from "react-router-dom";
+import axios from "axios";
+
+const DeleteExpense=()=>{
+
+    const{id}=useParams();
+    let history=useNavigate();
+
+    useEffect(()=>{
+
+        axios.get('http://127.0.0.1:8000/api/admin/expense/delete/'+id).then(resp=>{
+            console.log(resp.data);
+            if(resp.data==="Deleted"){
+                history('/admin/expenses/all');
+            }
+
+        }).catch(
+            err=>{
+                console.log(err);
+            });
+
+    },[]);
+
+
+}
+
+export default DeleteExpense;

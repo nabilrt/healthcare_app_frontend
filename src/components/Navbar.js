@@ -126,6 +126,10 @@ const Navbar = () =>{
 
                 <div className="btn-group">
                     <Link to="/admin/dashboard" className="btn btn-outline-primary">Dashboard</Link>
+                    <Link to="/admin/expense/create" className="btn btn-outline-primary">Create Expense</Link>
+                    <Link to="/admin/expenses/all" className="btn btn-outline-primary">Manage Expenses</Link>
+                    <Link to="/admin/notice/create" className="btn btn-outline-primary">Create Notice</Link>
+                    <Link to="/admin/notices/all" className="btn btn-outline-primary">Manage Notices</Link>
                     <Link to="/admin/profile" className="btn btn-outline-primary">Profile</Link>
                     <Link to="/logout" className="btn btn-outline-primary" onClick={refreshPage}>Logout</Link>
                 </div>

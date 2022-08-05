@@ -50,6 +50,13 @@ import EditMedicine from "./seller/EditMedicine";
 import DeleteMedicine from "./seller/DeleteMedicine";
 import SearchMedicine from "./seller/SearchMedicine";
 import AdminProfile from "./admin/AdminProfile";
+import CreateNotice from "./admin/CreateNotice";
+import ManageNotices from "./admin/ManageNotices";
+import DeleteNotice from "./admin/DeleteNotice";
+import CreateExpense from "./admin/CreateExpense";
+import ManageExpense from "./admin/ManageExpense";
+import EditExpense from "./admin/EditExpense";
+import DeleteExpense from "./admin/DeleteExpense";
 
 var token = null;
 if(localStorage.getItem('doctor')){
@@ -117,6 +124,13 @@ function Header(){
 
                 <Route path="/admin/dashboard" element={<AdminDash/>}/>
                 <Route path="/admin/profile" element={<AdminProfile/>}/>
+                <Route path="/admin/notice/create" element={<CreateNotice/>}/>
+                <Route path="/admin/notices/all" element={<ManageNotices/>}/>
+                <Route path="/admin/notice/delete/:id" element={<DeleteNotice/>}/>
+                <Route path="/admin/expense/create" element={<CreateExpense/>}/>
+                <Route path="/admin/expenses/all" element={<ManageExpense/>}/>
+                <Route path="/admin/expense/edit/:id" element={<EditExpense/>}/>
+                <Route path="/admin/expense/delete/:id" element={<DeleteExpense/>}/>
 
 
 
