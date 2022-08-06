@@ -29,6 +29,9 @@ const Login = () =>{
                 }else if (token==="Wrong Info"){
                     document.getElementById('msg').innerHTML="No User Found";
                 }
+                else if(token==="Blocked"){
+                    document.getElementById('msg').innerHTML="You are Blocked! Please Contact Support";
+                }
                 else if(token!==""){
                     var doctor = {docId: token.user_id, access_token:token.token, token_type:token.token_for};
                     localStorage.setItem('doctor',JSON.stringify(doctor));
