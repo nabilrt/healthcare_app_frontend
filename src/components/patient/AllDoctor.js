@@ -28,6 +28,9 @@ const AllDoctor = () => {
                     <th className="table-primary">Doctor Type</th>
                     <th className="table-primary">Speciality</th>
                     <th className="table-primary">Remuneration</th>
+                    <th className="table-primary">Schedule</th>
+
+
 
 
 
@@ -40,6 +43,7 @@ const AllDoctor = () => {
                             <td>{item.doctor_type}</td>
                             <td>{item.doctor_specialty}</td>
                             <td>{<s>{item.visit}</s>}{item.visit - (item.visit * (item.discount_per)/100)}$</td>
+                            <td><Link to={'/patient/doctor/schedule/'+item.doctor_id}>Check Schedule</Link></td>
                             <br/>
                         </tr>
                     ))

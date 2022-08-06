@@ -27,6 +27,7 @@ const NormalDoctor = () => {
                     <th className="table-primary">Doctor Type</th>
                     <th className="table-primary">Speciality</th>
                     <th className="table-primary">Remuneration</th>
+                    <th className="table-primary">Schedule</th>
 
 
 
@@ -39,6 +40,7 @@ const NormalDoctor = () => {
                             <td>{item.doctor_type}</td>
                             <td>{item.doctor_specialty}</td>
                             <td>{item.visit}$</td>
+                            <td><Link to={'/patient/doctor/schedule/'+item.doctor_id}>Check Schedule</Link></td>
 
 
                             <br/>
