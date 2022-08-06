@@ -65,6 +65,8 @@ import ValidPatient from "./admin/ValidPatient";
 import BlockedPatients from "./admin/BlockedPatients";
 import BlockPatient from "./admin/BlockPatient";
 import UnblockPatient from "./admin/UnblockPatient";
+import Support from "./Support";
+import ConfirmationSupport from "./ConfirmationSupport";
 
 var token = null;
 if(localStorage.getItem('doctor')){
@@ -91,6 +93,8 @@ function Header(){
                 <Route path="/register/patient" element={<PatientRegister/>}></Route>
                 <Route path="/logout" element={<Logout/>}></Route>
                 <Route path="/verify" element={<Verify/>}></Route>
+                <Route path="/contact/support" element={<Support/>}/>
+                <Route path="/contact/support/confirm" element={<ConfirmationSupport/>}/>
 
                 (Doctor Pages)
                 <Route path="/doctor/dashboard" element={<DocDash/>}></Route>

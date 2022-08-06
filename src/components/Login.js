@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
-import { useNavigate } from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import Header from "./Header";
 
 const Login = () =>{
@@ -70,7 +70,6 @@ const Login = () =>{
                     }
                 }
 
-
             }).catch(err=>{
             console.log(err);
         });
@@ -95,6 +94,7 @@ const Login = () =>{
             <span className="text-danger">
                 <p id="msg"></p>
             </span>
+            <Link to="/contact/support"><p>Contact Support</p></Link>
         </div>
     )
 }
