@@ -4,6 +4,7 @@ import axios from "axios";
 import {Link} from "react-router-dom";
 import AllDoctor from "./AllDoctor";
 import NormalDoctor from "./NormalDoctor";
+import PatientHeader from "../headers/PatientHeader";
 const Doctors = () => {
     const [isPremium,setisPremium]=useState([]);
     let user = JSON.parse(localStorage.getItem('doctor'));
@@ -23,6 +24,8 @@ const Doctors = () => {
    if (isPremium==="yes"){
        return (
            <div className="container">
+               <br/>
+               <PatientHeader/>
                <br/>
                <h4>Doctors</h4>
                <small>Here are all doctors</small> <br/>

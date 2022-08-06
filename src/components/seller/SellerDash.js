@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link, useNavigate} from "react-router-dom";
 import Login from "../Login";
 import axios from "axios";
+import SellerHeader from "../headers/SellerHeader";
 
 const SellerDash = () =>{
 
@@ -24,6 +25,8 @@ const SellerDash = () =>{
 
     return(
         <div className="container">
+            <br/>
+            <SellerHeader/>
             <br/>
             <h4>Welcome to Seller Dashboard</h4> <br/>
         </div>

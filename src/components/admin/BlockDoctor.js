@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useNavigate, useParams} from "react-router-dom";
 import axios from "axios";
+import AdminHeader from "../headers/AdminHeader";
 
 const BlockDoctor=()=>{
     const{id}=useParams();
@@ -25,6 +26,8 @@ const BlockDoctor=()=>{
 
     return(
         <div className="container">
+            <br/>
+            <AdminHeader/>
             <br/>
             <h4>Block Remark</h4>
             <div className="mb-3">

@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link, useNavigate, useParams} from "react-router-dom";
 import axios from "axios";
+import PatientHeader from "../headers/PatientHeader";
 const PatientConv = () =>{
 
     const {id}=useParams();
@@ -22,6 +23,8 @@ const PatientConv = () =>{
     },[]);
     return (
         <div className="container">
+            <br/>
+            <PatientHeader/>
             <br/>
             <h5>Conversation</h5>
             <table className="table table-bordered">

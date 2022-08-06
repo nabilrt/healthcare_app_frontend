@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import {useNavigate} from "react-router-dom";
 import axios from "axios";
+import PatientHeader from "../headers/PatientHeader";
 const PatientProfile=()=>{
     const [passwordShown, setPasswordShown] = useState(false);
     const [name,setName]=useState("");
@@ -51,6 +52,8 @@ const PatientProfile=()=>{
     }
     return (
         <div className="container">
+            <br/>
+            <PatientHeader/>
             <br/>
             <h4>Patient Profile</h4>
             <form action="" className="row g-3">

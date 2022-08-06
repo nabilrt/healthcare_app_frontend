@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useNavigate, useParams} from "react-router-dom";
 import axios from "axios";
+import DoctorHeader from "../headers/DoctorHeader";
 
 const DocNewMessage = () =>{
     const{id}=useParams();
@@ -21,6 +22,8 @@ const DocNewMessage = () =>{
 
     return(
         <div className="container">
+            <br/>
+            <DoctorHeader/>
             <br/>
             <h5>Send New Message</h5>
             <form action="">

@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 import {Link} from "react-router-dom";
+import SellerHeader from "../headers/SellerHeader";
 
 const SearchMedicine = () =>{
 
@@ -35,6 +36,8 @@ const SearchMedicine = () =>{
 
     return(
         <div className="container">
+            <br/>
+            <SellerHeader/>
             <br/>
             <h4>Search Medicines</h4> <br/>
             <form action="">

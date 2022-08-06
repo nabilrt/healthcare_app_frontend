@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
+import BasicHeader from "./headers/BasicHeader";
 
 const Verify = () =>{
     const [otp,setOTP]=useState("");
@@ -29,6 +30,8 @@ const Verify = () =>{
 
     return(
         <div className="container">
+            <br/>
+            <BasicHeader></BasicHeader>
             <br/>
             <h4>Your User ID and OTP has been sent to your email.</h4>
             <form>

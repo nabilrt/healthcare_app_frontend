@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {useEffect, useState} from "react";
 import {Link, useNavigate} from "react-router-dom";
 import axios from "axios";
+import PatientHeader from "../headers/PatientHeader";
 
 const PatientInbox = () =>{
     const[inbox,setInbox]=useState([]);
@@ -28,6 +29,9 @@ const PatientInbox = () =>{
 
     return(
         <div className="container">
+            <br/>
+            <PatientHeader/>
+            <br/>
             <h4>Inbox</h4>
             <small>Patient can interact with doctors</small> <br/>
             <br/>

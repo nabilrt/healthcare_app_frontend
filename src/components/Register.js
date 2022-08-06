@@ -2,6 +2,7 @@ import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link} from "react-router-dom";
 import Header from "./Header";
+import BasicHeader from "./headers/BasicHeader";
 
 
 const Register = () =>{
@@ -9,6 +10,8 @@ const Register = () =>{
         <div className="container">
 
 
+            <br/>
+            <BasicHeader></BasicHeader>
             <br/>
             <h3>Register AS</h3> <br/>
             <Link to="/register/doctor" className="btn btn-outline-dark">Doctor</Link> &nbsp;

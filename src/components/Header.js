@@ -79,7 +79,7 @@ axios.defaults.headers.common["Authorization"] = token;
 function Header(){
     return (
         <div className="container">
-            <Navbar/>
+            
 
             <Routes>
 

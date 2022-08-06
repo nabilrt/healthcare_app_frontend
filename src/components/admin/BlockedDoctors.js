@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 import {Link} from "react-router-dom";
+import AdminHeader from "../headers/AdminHeader";
 
 const BlockedDoctors =() => {
     const[doctors,setDoctors]=useState([]);
@@ -25,6 +26,8 @@ const BlockedDoctors =() => {
 
     return(
         <div className="container">
+            <br/>
+            <AdminHeader/>
             <br/>
             <h4>Blocked Doctor List</h4>
             <br/>

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
+import DoctorHeader from "../headers/DoctorHeader";
 
 const DocEarning = () =>{
 
@@ -24,6 +25,8 @@ const DocEarning = () =>{
 
     return(
         <div className="container">
+            <br/>
+            <DoctorHeader/>
             <br/>
             <h4>Earning Details</h4>
             <small>Checkout your earnings</small> <br/> <br/>

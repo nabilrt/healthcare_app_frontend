@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
+import BasicHeader from "./headers/BasicHeader";
 
 const Support=()=>{
     const[id,setID]=useState("");
@@ -30,6 +31,8 @@ const Support=()=>{
     return(
 
         <div className="container">
+            <br/>
+            <BasicHeader></BasicHeader>
             <br/>
             <h4>Contact Support</h4> <br/>
             <form action="">

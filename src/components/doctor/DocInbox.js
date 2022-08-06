@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 import {Link, useNavigate} from "react-router-dom";
+import DoctorHeader from "../headers/DoctorHeader";
 
 const DocInbox = () =>{
 
@@ -27,6 +28,8 @@ const DocInbox = () =>{
 
     return(
         <div className="container">
+            <br/>
+            <DoctorHeader/>
             <br/>
             <h4>Inbox</h4>
             <small>Contains all the conversations</small> <br/>

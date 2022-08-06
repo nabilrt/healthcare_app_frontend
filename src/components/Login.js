@@ -3,20 +3,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 import {Link, useNavigate} from 'react-router-dom';
 import Header from "./Header";
+import BasicHeader from "./headers/BasicHeader";
 
 const Login = () =>{
    // let[token, setToken]= useState("");
     let[name, setName] = useState("");
     let[password, setPassword] =useState("");
     const history = useNavigate();
-
-    function refreshPage() {
-        setTimeout(()=>{
-            window.location.reload(false);
-        }, 500);
-        console.log('page to reload')
-    }
-
 
     const loginSubmit= ()=>{
         var obj = {username: name, password: password};
@@ -37,31 +30,19 @@ const Login = () =>{
                     localStorage.setItem('doctor',JSON.stringify(doctor));
                     // console.log(localStorage.getItem('user'));
                     if(token.token_for==="Doctor"){
-                        setTimeout(()=>{
-                            window.location.reload(false);
-                        }, 500);
-                        console.log('page to reload');
+
                         history('/doctor/dashboard');
                     }
                     if(token.token_for==="Patient"){
-                        setTimeout(()=>{
-                            window.location.reload(false);
-                        }, 500);
-                        console.log('page to reload');
+
                         history('/patient/dashboard');
                     }
                     if(token.token_for==="Seller"){
-                        setTimeout(()=>{
-                            window.location.reload(false);
-                        }, 500);
-                        console.log('page to reload');
+
                         history('/seller/dashboard');
                     }
                     if(token.token_for==="Admin"){
-                        setTimeout(()=>{
-                            window.location.reload(false);
-                        }, 500);
-                        console.log('page to reload');
+
                         history('/admin/dashboard');
                     }
                     //console.log('Login');
@@ -80,7 +61,7 @@ const Login = () =>{
     return (
         <div className="container">
             <br/>
-
+            <BasicHeader></BasicHeader>
             <br/>
             <h3>Login to your system</h3>
             <small>Enter correct credentials to login</small> <br/> <br/>

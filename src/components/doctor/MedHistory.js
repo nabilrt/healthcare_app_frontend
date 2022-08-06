@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link} from "react-router-dom";
 import axios from "axios";
+import DoctorHeader from "../headers/DoctorHeader";
 
 const MedHistory = () =>{
     const[medHistory,setMedHistory]=useState([]);
@@ -24,6 +25,8 @@ const MedHistory = () =>{
 
     return(
         <div className="container">
+            <br/>
+            <DoctorHeader/>
             <br/>
             <h4>Patient's Medical Histories</h4>
             <small>Contains all the patient's medical history</small> <br/> <br/>

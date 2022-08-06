@@ -21,6 +21,7 @@ const AllDoctor = () => {
     },[]);
     return (
         <div className="container">
+
             <table className="table table-bordered">
                 <tr className="table-primary">
                     <th className="table-primary">Doctor Name</th>

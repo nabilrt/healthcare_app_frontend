@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 import {Link} from "react-router-dom";
+import SellerHeader from "../headers/SellerHeader";
 
 const SellerNotice = () => {
     const[notices,setNotices]=useState([]);
@@ -21,6 +22,8 @@ const SellerNotice = () => {
     return(
 
         <div className="container">
+            <br/>
+            <SellerHeader/>
             <br/>
             <h4>Notices For Seller</h4> <br/>
             <table className="table table-bordered">

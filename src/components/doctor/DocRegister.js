@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from "../Header";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
+import BasicHeader from "../headers/BasicHeader";
 
 const DocRegister = () =>{
     const [passwordShown, setPasswordShown] = useState(false);
@@ -42,6 +43,8 @@ const DocRegister = () =>{
     return (
         <div className="container">
 
+            <br/>
+            <BasicHeader></BasicHeader>
             <br/>
             <h4>Doctor Registration Form</h4>
             <small>Please enter correct details</small> <br/> <br/>

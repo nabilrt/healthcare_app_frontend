@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
+import DoctorHeader from "../headers/DoctorHeader";
 
 const DocPayment = () =>{
     const[amount,setAmount]=useState("");
@@ -47,6 +48,8 @@ const DocPayment = () =>{
 
     return(
         <div className="container">
+            <br/>
+            <DoctorHeader/>
             <br/>
             <h4>Remuneration Profile</h4>
             <form action="">

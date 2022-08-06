@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 import {Link} from "react-router-dom";
 import app from "../../App";
+import DoctorHeader from "../headers/DoctorHeader";
 
 const DocAppointments = () =>{
     const[appointments,setAppointments]=useState([]);
@@ -41,6 +42,8 @@ const DocAppointments = () =>{
 
     return(
         <div className="container">
+            <br/>
+            <DoctorHeader/>
             <br/>
             <h4>Appointments</h4>
             <form action="">

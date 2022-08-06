@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
+import SellerHeader from "../headers/SellerHeader";
 
 const AddMedicine = () =>{
     const[name,setName]=useState("");
@@ -31,6 +32,8 @@ const AddMedicine = () =>{
 
     return(
         <div className="container">
+            <br/>
+            <SellerHeader/>
             <br/>
             <h4>Add Medicines</h4> <br/>
             <form action="" className="row g-3">

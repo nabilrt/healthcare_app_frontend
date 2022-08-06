@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link, useNavigate, useParams} from "react-router-dom";
 import axios from "axios";
+import DoctorHeader from "../headers/DoctorHeader";
 
 const DocConv = () =>{
 
@@ -37,6 +38,8 @@ const DocConv = () =>{
 
     return (
         <div className="container">
+            <br/>
+            <DoctorHeader/>
             <br/>
             <h5>Conversation</h5>
             <table className="table table-bordered">

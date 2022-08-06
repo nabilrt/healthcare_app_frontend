@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
+import AdminHeader from "../headers/AdminHeader";
 
 const CreateExpense=()=>{
     const[purpose,setPurpose]=useState("");
@@ -23,6 +24,8 @@ const CreateExpense=()=>{
 
     return(
         <div className="container">
+            <br/>
+            <AdminHeader/>
             <br/>
             <h4>Create Expense</h4> <br/>
             <form action="" className="row g-3">

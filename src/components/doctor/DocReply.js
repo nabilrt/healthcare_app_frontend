@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useNavigate, useParams} from "react-router-dom";
 import axios from "axios";
+import DoctorHeader from "../headers/DoctorHeader";
 
 const DocReply = () =>{
     const {id}=useParams();
@@ -23,6 +24,8 @@ const DocReply = () =>{
 
     return(
         <div className="container">
+            <br/>
+            <DoctorHeader/>
             <br/>
             <h4>Reply</h4>
             <form action="">
