@@ -2,7 +2,7 @@ import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link} from "react-router-dom";
 import Header from "./Header";
-import GenericHeader from "./headers/GenericHeader";
+
 
 const Register = () =>{
     return (

@@ -57,6 +57,14 @@ import CreateExpense from "./admin/CreateExpense";
 import ManageExpense from "./admin/ManageExpense";
 import EditExpense from "./admin/EditExpense";
 import DeleteExpense from "./admin/DeleteExpense";
+import ValidDoctor from "./admin/ValidDoctor";
+import BlockedDoctors from "./admin/BlockedDoctors";
+import BlockDoctor from "./admin/BlockDoctor";
+import UnblockDoctor from "./admin/UnblockDoctor";
+import ValidPatient from "./admin/ValidPatient";
+import BlockedPatients from "./admin/BlockedPatients";
+import BlockPatient from "./admin/BlockPatient";
+import UnblockPatient from "./admin/UnblockPatient";
 
 var token = null;
 if(localStorage.getItem('doctor')){
@@ -72,6 +80,8 @@ function Header(){
             <Navbar/>
 
             <Routes>
+
+                (Basic Pages)
                 <Route index element={<Home />} />
                 <Route path="/home" element={<Home/>}/>
                 <Route path="/register" element={<Register/>} />
@@ -82,6 +92,7 @@ function Header(){
                 <Route path="/logout" element={<Logout/>}></Route>
                 <Route path="/verify" element={<Verify/>}></Route>
 
+                (Doctor Pages)
                 <Route path="/doctor/dashboard" element={<DocDash/>}></Route>
                 <Route path="/doctor/inbox" element={<DocInbox/>}></Route>
                 <Route path="/doctor/earnings" element={<DocEarning/>}></Route>
@@ -97,6 +108,7 @@ function Header(){
                 <Route path="/doctor/review/post" element={<DocReview/>}></Route>
                 <Route path="/doctor/review/all" element={<DocPrevReview/>}></Route>
 
+                (Patient Pages)
                 <Route path="/patient/dashboard" element={<PatientDash/>}></Route>
                 <Route path="/patient/inbox" element={<PatientInbox/>}></Route>
                 <Route path="/patient/shop" element={<Shop/>}></Route>
@@ -109,6 +121,7 @@ function Header(){
                 <Route path="/patient/review/post" element={<PatientReview/>}></Route>
                 <Route path="/patient/review/all" element={<PatientPrevReview/>}></Route>
 
+                (Seller Pages)
                 <Route path="/seller/dashboard" element={<SellerDash/>}></Route>
                 <Route path="/seller/pr" element={<SellerProfile/>}/>
                 <Route path="/seller/notices" element={<SellerNotice/>}/>
@@ -122,6 +135,7 @@ function Header(){
                 <Route path="/seller/medicine/delete/:id" element={<DeleteMedicine/>}/>
                 <Route path="/seller/medicine/search" element={<SearchMedicine/>}></Route>
 
+                (Admin Pages)
                 <Route path="/admin/dashboard" element={<AdminDash/>}/>
                 <Route path="/admin/profile" element={<AdminProfile/>}/>
                 <Route path="/admin/notice/create" element={<CreateNotice/>}/>
@@ -131,12 +145,14 @@ function Header(){
                 <Route path="/admin/expenses/all" element={<ManageExpense/>}/>
                 <Route path="/admin/expense/edit/:id" element={<EditExpense/>}/>
                 <Route path="/admin/expense/delete/:id" element={<DeleteExpense/>}/>
-
-
-
-
-
-
+                <Route path="/admin/doctors/valid" element={<ValidDoctor/>}/>
+                <Route path="/admin/doctors/blocked" element={<BlockedDoctors/>}/>
+                <Route path="/admin/doctor/block/:id" element={<BlockDoctor/>}/>
+                <Route path="/admin/doctor/unblock/:id" element={<UnblockDoctor/>}/>
+                <Route path="/admin/patients/valid" element={<ValidPatient/>}/>
+                <Route path="/admin/patients/blocked" element={<BlockedPatients/>}/>
+                <Route path="/admin/patient/block/:id" element={<BlockPatient/>}/>
+                <Route path="/admin/patient/unblock/:id" element={<UnblockPatient/>}/>
 
             </Routes>
         </div>
