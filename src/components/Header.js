@@ -68,6 +68,7 @@ import UnblockPatient from "./admin/UnblockPatient";
 import Support from "./Support";
 import ConfirmationSupport from "./ConfirmationSupport";
 import DocSchedule from "./patient/DocSchedule";
+import Membership from "./patient/Membership";
 
 var token = null;
 if(localStorage.getItem('doctor')){
@@ -126,6 +127,9 @@ function Header(){
                 <Route path="/patient/review/post" element={<PatientReview/>}></Route>
                 <Route path="/patient/review/all" element={<PatientPrevReview/>}></Route>
                 <Route path="/patient/doctor/schedule/:id" element={<DocSchedule/>}></Route>
+                <Route path="/patient/membership/info" element={<Membership/>}></Route>
+
+
 
 
 

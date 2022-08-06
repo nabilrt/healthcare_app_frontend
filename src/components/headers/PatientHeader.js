@@ -10,6 +10,8 @@ const PatientHeader=()=>{
             <div className="btn-group">
                 <Link to="/patient/dashboard" className="btn btn-outline-primary">Dashboard</Link>
                 <Link to="/patient/inbox" className="btn btn-outline-primary">Inbox</Link>
+                <Link to="/patient/membership/info" className="btn btn-outline-primary">Membership</Link>
+
                 <Link to="/patient/doctors/all" className="btn btn-outline-primary">Doctors</Link>
                 <Link to="/patient/shop" className="btn btn-outline-primary">Shop</Link>
                 <Link to="/patient/notices" className="btn btn-outline-primary">Notices</Link>
