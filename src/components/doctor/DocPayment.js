@@ -9,6 +9,7 @@ const DocPayment = () =>{
     const[discount,setDiscount]=useState("");
     let user = JSON.parse(localStorage.getItem('doctor'));
     var obj={token:user.access_token,visit:amount,disc_per:discount};
+    axios.defaults.headers.common["Authorization"] = obj.token;
 
     let history=useNavigate();
 
@@ -26,6 +27,7 @@ const DocPayment = () =>{
 
         }).catch(
             err=>{
+                history('/login');
                 console.log(err.response.data);
             });
 

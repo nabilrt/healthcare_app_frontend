@@ -11,6 +11,7 @@ const DocInbox = () =>{
     let user = JSON.parse(localStorage.getItem('doctor'));
     var obj={token:user.access_token};
     let history=useNavigate();
+    axios.defaults.headers.common["Authorization"] = obj.token;
 
     useEffect(()=>{
 

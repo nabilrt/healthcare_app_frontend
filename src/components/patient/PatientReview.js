@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import PatientHeader from "../headers/PatientHeader";
 
 const PatientReview = () =>{
@@ -9,6 +9,13 @@ const PatientReview = () =>{
     const[successMsg,setSuccessMsg]=useState("");
     let user = JSON.parse(localStorage.getItem('doctor'));
     var obj={token:user.access_token,comment:comment};
+    let history=useNavigate();
+
+    if(obj.token===""){
+        history('/login');
+    }
+
+    console.log(obj.token);
 
     const postReview = () =>{
 
@@ -20,6 +27,7 @@ const PatientReview = () =>{
 
         }).catch(
             err=>{
+
                 console.log(err.response.data);
             });
     }

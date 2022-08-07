@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 import DoctorHeader from "../headers/DoctorHeader";
+import {useNavigate} from "react-router-dom";
 
 const DocEarning = () =>{
 
@@ -9,6 +10,9 @@ const DocEarning = () =>{
 
     let user = JSON.parse(localStorage.getItem('doctor'));
     var obj={token:user.access_token};
+    let history=useNavigate();
+    axios.defaults.headers.common["Authorization"] = obj.token;
+
 
     useEffect(()=>{
 
@@ -18,6 +22,7 @@ const DocEarning = () =>{
 
         }).catch(
             err=>{
+                history('/login');
                 console.log(err.response.data);
             });
 

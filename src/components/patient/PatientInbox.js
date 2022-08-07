@@ -10,6 +10,7 @@ const PatientInbox = () =>{
 
     let user = JSON.parse(localStorage.getItem('doctor'));
     var obj={token:user.access_token};
+    axios.defaults.headers.common["Authorization"] = obj.token;
     let history=useNavigate();
 
     useEffect(()=>{
@@ -20,7 +21,7 @@ const PatientInbox = () =>{
 
         }).catch(
             err=>{
-                // history('/login');
+                history('/login');
                 console.log(err.response.data);
             });
 

@@ -11,6 +11,8 @@ const Membership = () => {
     const [isPremium,setisPremium]=useState([]);
     let user = JSON.parse(localStorage.getItem('doctor'));
     var obj={token:user.access_token};
+    axios.defaults.headers.common["Authorization"] = obj.token;
+    let history=useNavigate();
     useEffect(()=>{
 
         axios.post('http://127.0.0.1:8000/api/patient/status',obj).then(resp=>{
@@ -19,6 +21,7 @@ const Membership = () => {
 
         }).catch(
             err=>{
+                history('/login');
                 console.log(err.response.data);
             });
 

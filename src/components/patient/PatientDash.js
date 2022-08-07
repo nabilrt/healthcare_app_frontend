@@ -7,6 +7,11 @@ import PatientHeader from "../headers/PatientHeader";
 
 const PatientDash = () =>{
 
+    let user = JSON.parse(localStorage.getItem('doctor'));
+    var obj={token:user.access_token};
+    axios.defaults.headers.common["Authorization"] = obj.token;
+    console.log(obj.token);
+    console.log(axios.defaults.headers.common["Authorization"]);
 
 
 

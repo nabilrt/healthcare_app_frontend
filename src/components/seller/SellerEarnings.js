@@ -1,12 +1,13 @@
 import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import SellerHeader from "../headers/SellerHeader";
 
 const SellerEarnings = () =>{
     const [orders,setOrders]=useState([]);
-
+    let history=useNavigate();
+    axios.defaults.headers.common["Authorization"] = obj.token;
     useEffect(()=>{
 
         axios.post('http://127.0.0.1:8000/api/seller/earnings').then(resp=>{
@@ -15,6 +16,7 @@ const SellerEarnings = () =>{
 
         }).catch(
             err=>{
+                history('/login');
                 console.log(err.response.data);
             });
 
