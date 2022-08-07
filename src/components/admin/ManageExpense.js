@@ -1,11 +1,15 @@
 import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import AdminHeader from "../headers/AdminHeader";
 
 const ManageExpense=()=>{
     const[expenses,setExpenses]=useState([]);
+    let user = JSON.parse(localStorage.getItem('doctor'));
+    var obj = {token: user.access_token};
+    let history = useNavigate();
+    axios.defaults.headers.common["Authorization"] = obj.token;
 
     useEffect(()=>{
 
@@ -15,6 +19,7 @@ const ManageExpense=()=>{
 
         }).catch(
             err=>{
+                history('/login');
                 console.log(err.response.data);
             });
 

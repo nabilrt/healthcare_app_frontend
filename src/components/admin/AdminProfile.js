@@ -17,6 +17,7 @@ const AdminProfile = () => {
     let user = JSON.parse(localStorage.getItem('doctor'));
     var obj = {token: user.access_token, name: name, email: email, pass: pass};
     let history = useNavigate();
+    axios.defaults.headers.common["Authorization"] = obj.token;
 
     useEffect(() => {
 
@@ -29,7 +30,7 @@ const AdminProfile = () => {
 
         }).catch(
             err => {
-                // history('/login');
+                history('/login');
                 console.log(err.response.data);
             });
 
