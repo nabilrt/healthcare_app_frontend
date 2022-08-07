@@ -47,6 +47,9 @@ const Membership = () => {
     else {
         return (
             <div className="container">
+
+                <br/>
+                <PatientHeader/>
                 <br/>
                 <h4>Membership</h4>
                <br/>

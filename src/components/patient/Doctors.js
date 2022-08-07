@@ -42,6 +42,9 @@ const Doctors = () => {
    else {
        return (
            <div className="container">
+
+               <br/>
+               <PatientHeader/>
                <br/>
                <h4>Doctors</h4>
                <small>Here are all doctors</small> <br/>
