@@ -10,6 +10,20 @@ const TakeMembership = () => {
     let history=useNavigate();
     var obj={token:user.access_token,amount:amount,met:method};
 
+    useEffect(()=>{
+
+        axios.post('http://127.0.0.1:8000/api/patient/charge',obj).then(resp=>{
+            console.log(resp.data);
+            setAmount(resp.data.charge);
+
+        }).catch(
+            err=>{
+                console.log(err.response.data);
+            });
+
+    },[]);
+
+
 const pay=()=>
 {
     axios.post('http://127.0.0.1:8000/api/patient/membership/pay',obj).then(resp=>{
@@ -59,7 +73,7 @@ const pay=()=>
                 <br/>
             </form>
             <br/>
-            <button className="btn btn-outline" onClick={pay}></button>
+            <button className="btn btn-outline" onClick={pay}>Pay</button>
 
 
         </div>
