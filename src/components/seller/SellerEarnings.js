@@ -7,6 +7,8 @@ import SellerHeader from "../headers/SellerHeader";
 const SellerEarnings = () =>{
     const [orders,setOrders]=useState([]);
     let history=useNavigate();
+    let user = JSON.parse(localStorage.getItem('doctor'));
+    var obj={token:user.access_token};
     axios.defaults.headers.common["Authorization"] = obj.token;
     useEffect(()=>{
 
