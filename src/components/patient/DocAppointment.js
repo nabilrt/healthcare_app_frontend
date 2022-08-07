@@ -1,17 +1,41 @@
 import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
-import {Link, useParams} from "react-router-dom";
+import {Link, useNavigate, useParams} from "react-router-dom";
 import PatientHeader from "../headers/PatientHeader";
 const DocAppointment = () => {
     const{id}=useParams();
     const [appDate,setAppDate]=useState("");
     const [appTime,setAppTime]=useState("");
-    const [issues,setIssues]=useState([]);
+
+    const [issue,setIssue]=useState("");
+    const [noTime,setnoTime]=useState("");
+    let history=useNavigate();
 
 
     let user = JSON.parse(localStorage.getItem('doctor'));
-    var obj={token:user.access_token,appDate:appDate,appTime:appTime,issues:issues,id:id};
+    var obj={token:user.access_token,appDate:appDate,appTime:appTime,issue:issue,id:id};
+
+
+    const check=()=>{
+        console.log(issue);
+        axios.post('http://127.0.0.1:8000/api/patient/appointment/take',obj).then(resp=>{
+            console.log(resp.data);
+
+            if(resp.data==="Done"){
+        history('/patient/inbox');
+             }
+            else if(resp.data==="Error"){
+                setnoTime("Time slot not available, try another");
+            }
+            //   setInbox(resp.data);
+
+        }).catch(
+            err=>{
+
+                console.log(err.response.data);
+            });
+    }
 
     return(
         <div className="container">
@@ -25,57 +49,24 @@ const DocAppointment = () => {
                 <div className="mb-3">
                     <label htmlFor="app_time" className="form-label">Choose Time Slot</label>
                     <input type="time" name="app_time" id="app_time" className="form-control" value={appTime} onChange={(e)=>setAppTime(e.target.value)}/>
-
+                    <br/>
+                    <span className="text-danger">{noTime}</span>
                 </div>
                 <div className="mb-3">
                     <label htmlFor="app_date" className="form-label">Date</label>
                     <input type="date" name="app_date" id="app_date" className="form-control" value={appDate} onChange={(e)=>setAppDate(e.target.value)}/>
                 </div>
                 <br/>
-                    <h6>Medical Checklist</h6>
-                    <div className="form-check">
-                        <input className="form-check-input" name="problems[]" type="checkbox" value="Gastric"
-                               id="defaultCheck2" value={issues} onChange={(e)=>setIssues(e.target.value[0])}/>
-                        <label className="form-check-label" htmlFor="defaultCheck2"> Gastric </label>
-                    </div>
-                    <div className="form-check">
-                        <input className="form-check-input" name="problems[]" type="checkbox" value="Sour Throat"
-                               id="defaultCheck3"/>
-                        <label className="form-check-label" htmlFor="defaultCheck3"> Sour Throat </label>
-                    </div>
-                    <div className="form-check">
-                        <input className="form-check-input" name="problems[]" type="checkbox" value="Allergy"
-                               id="defaultCheck4"/>
-                        <label className="form-check-label" htmlFor="defaultCheck4"> Allergy </label>
-                    </div>
-                    <div className="form-check">
-                        <input className="form-check-input" name="problems[]" type="checkbox" value="Fever"
-                               id="defaultCheck5"/>
-                        <label className="form-check-label" htmlFor="defaultCheck5"> Fever </label>
-                    </div>
-                    <div className="form-check">
-                        <input className="form-check-input" name="problems[]" type="checkbox" value="Cough"
-                               id="defaultCheck6"/>
-                        <label className="form-check-label" htmlFor="defaultCheck6"> Cough </label>
-                    </div>
-                    <div className="form-check">
-                        <input className="form-check-input" name="problems[]" type="checkbox" value="Diabetes"
-                               id="defaultCheck7"/>
-                        <label className="form-check-label" htmlFor="defaultCheck7"> Diabetes </label>
-                    </div>
-                    <div className="form-check">
-                        <input className="form-check-input" name="problems[]" type="checkbox" value="Migraine"
-                               id="defaultCheck8"/>
-                        <label className="form-check-label" htmlFor="defaultCheck8"> Migraine </label>
-                    </div>
-                    <div className="form-check">
-                        <input className="form-check-input" name="problems[]" type="checkbox" value="Eye Problem"
-                               id="defaultCheck9"/>
-                        <label className="form-check-label" htmlFor="defaultCheck9"> Eye Problem </label>
-                    </div>
+                    <h6>Describe your problem here</h6>
+                <div className="mb-3">
+                    <label htmlFor="problem" className="form-label">Problem</label>
+                    <textarea name="" id="" cols="30" rows="10" value={issue} onChange={(e)=>setIssue(e.target.value)} className="form-control"></textarea>
+                </div>
 
 
-            </form>
+
+            </form> <br/>
+            <button onClick={check}>Check</button>
 
 
 
@@ -84,4 +75,6 @@ const DocAppointment = () => {
 
     )
 }
+
+export default DocAppointment;
 

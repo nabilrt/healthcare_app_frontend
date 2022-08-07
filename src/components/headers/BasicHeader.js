@@ -12,6 +12,7 @@ const BasicHeader=()=>{
                 <Link to="/register" className="btn btn-outline-primary">Register</Link>
                 <Link to="/login" className="btn btn-outline-primary">Login</Link>
                 <Link to="/about" className="btn btn-outline-primary">About</Link>
+
             </div>
 
         </div>

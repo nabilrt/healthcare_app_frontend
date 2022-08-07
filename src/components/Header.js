@@ -69,6 +69,12 @@ import Support from "./Support";
 import ConfirmationSupport from "./ConfirmationSupport";
 import DocSchedule from "./patient/DocSchedule";
 import Membership from "./patient/Membership";
+import DocAppointment from "./patient/DocAppointment";
+import AddToCart from "./patient/AddToCart";
+import Cart from "./patient/Cart";
+import ConfirmCheckout from "./patient/ConfirmCheckout";
+import PatientOrderHistory from "./patient/PatientOrderHistory";
+
 
 var token = null;
 if(localStorage.getItem('doctor')){
@@ -97,6 +103,7 @@ function Header(){
                 <Route path="/verify" element={<Verify/>}></Route>
                 <Route path="/contact/support" element={<Support/>}/>
                 <Route path="/contact/support/confirm" element={<ConfirmationSupport/>}/>
+
 
                 (Doctor Pages)
                 <Route path="/doctor/dashboard" element={<DocDash/>}></Route>
@@ -128,6 +135,11 @@ function Header(){
                 <Route path="/patient/review/all" element={<PatientPrevReview/>}></Route>
                 <Route path="/patient/doctor/schedule/:id" element={<DocSchedule/>}></Route>
                 <Route path="/patient/membership/info" element={<Membership/>}></Route>
+                <Route path="/patient/doctor/appointment/:id" element={<DocAppointment/>}/>
+                <Route path="/patient/cart/add/:id" element={<AddToCart/>}/>
+                <Route path="/patient/cart" element={<Cart/>}/>
+                <Route path="/patient/checkout/confirm" element={<ConfirmCheckout/>}/>
+                <Route path="/patient/orders" element={<PatientOrderHistory/>}/>
 
 
 
