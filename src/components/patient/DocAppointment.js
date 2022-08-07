@@ -66,7 +66,7 @@ const DocAppointment = () => {
 
 
             </form> <br/>
-            <button onClick={check}>Check</button>
+            <button onClick={check} className="btn btn-outline-primary">Check</button>
 
 
 
