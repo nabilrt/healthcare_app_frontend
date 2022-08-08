@@ -17,13 +17,11 @@ const PatientDash = () =>{
 
 
     return(
-        <div className="container">
-            <br/>
-            <PatientHeader/>
-            <br/>
+<>
+
             <h4>Welcome to Patient Dashboard</h4> <br/>
 
-        </div>
+        </>
     )
 }
 

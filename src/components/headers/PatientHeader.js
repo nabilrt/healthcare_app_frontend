@@ -18,6 +18,7 @@ const PatientHeader=()=>{
                 <Link to="/patient/notices" className="btn btn-outline-primary">Notices</Link>
                 <Link to="/patient/review/post" className="btn btn-outline-primary">Review</Link>
                 <Link to="/patient/profile" className="btn btn-outline-primary">Profile</Link>
+                <Link to="/patient/dash" className="btn btn-outline-primary">Dash</Link>
                 <Link to="/logout" className="btn btn-outline-primary">Logout</Link>
             </div>
 

@@ -74,6 +74,7 @@ import AddToCart from "./patient/AddToCart";
 import Cart from "./patient/Cart";
 import ConfirmCheckout from "./patient/ConfirmCheckout";
 import PatientOrderHistory from "./patient/PatientOrderHistory";
+import PDash from "./patient/PDash";
 
 
 var token = null;
@@ -140,6 +141,7 @@ function Header(){
                 <Route path="/patient/cart" element={<Cart/>}/>
                 <Route path="/patient/checkout/confirm" element={<ConfirmCheckout/>}/>
                 <Route path="/patient/orders" element={<PatientOrderHistory/>}/>
+                <Route path="/patient/dash" element={<PDash/>}/>
 
 
 

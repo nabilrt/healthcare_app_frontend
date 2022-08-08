@@ -63,13 +63,8 @@ const DocAppointment = () => {
                     <textarea name="" id="" cols="30" rows="10" value={issue} onChange={(e)=>setIssue(e.target.value)} className="form-control"></textarea>
                 </div>
 
-
-
             </form> <br/>
             <button onClick={check} className="btn btn-outline-primary">Check</button>
-
-
-
 
         </div>
 
