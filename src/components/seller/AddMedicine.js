@@ -34,11 +34,11 @@ const AddMedicine = () =>{
 
             <h4>Add Medicines</h4> <br/>
             <form action="" className="row g-3">
-                <div className="col-md-12">
+                <div className="col-md-6">
                     <label htmlFor="name" className="form-label">Medicine Name</label>
                     <input type="text" name="" id="name" value={name} onChange={(e)=>setName(e.target.value)} className="form-control"/>
                 </div>
-                <div className="col-md-12">
+                <div className="col-md-6">
                     <label htmlFor="type" className="form-label">Medicine Type</label>
                     <select name="" id="" value={type} onChange={(e)=>setType(e.target.value)} className="form-select">
                         <option value="">Choose an Option</option>
@@ -50,17 +50,17 @@ const AddMedicine = () =>{
                         <option value="Syrup">Syrup</option>
                     </select>
                 </div>
-                <div className="col-md-12">
+                <div className="col-md-6">
                     <label htmlFor="quantity" className="form-label">Quantity</label>
                     <input type="number" name="" id="" value={quantity} onChange={(e)=>setQuantity(e.target.value)} className="form-control"/>
                 </div>
-                <div className="col-md-12">
+                <div className="col-md-6">
                     <label htmlFor="unit_price" className="form-label">Price Per Unit</label>
                     <input type="text" name="" id="unit_price" value={price} onChange={(e)=>setPrice(e.target.value)} className="form-control" />
                 </div>
 
             </form> <br/>
-            <button className="btn btn-outline-success" onClick={addMedicine}>Add Medicine</button>
+            <button className="btn btn-outline-success" onClick={addMedicine}><i className="icon material-symbols-outlined">add_circle</i></button>
         </div>
     )
 

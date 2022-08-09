@@ -29,20 +29,25 @@ const SellerNotice = () => {
         <div className="container">
 
             <h4>Notices For Seller</h4> <br/>
-            <table className="table table-bordered">
-                <tr className="table-primary">
-                    <th className="table-primary">Notice ID</th>
-                    <th className="table-primary">Message</th>
+            <table className="table table-hover">
+                <thead>
+                <tr>
+                    <th>Notice ID</th>
+                    <th>Message</th>
                 </tr>
+                </thead>
+                <tbody>
                 {
                     notices.map((item, i) => (
-                        <tr key={i}>
+                        <tr key={i} className="table table-sm">
                             <td>{item.notice_id}</td>
                             <td>{item.message}</td>
                             <br/>
                         </tr>
                     ))
                 }
+                </tbody>
+
             </table>
 
         </div>

@@ -30,21 +30,24 @@ const SellerEarnings = () =>{
 
             <h4>Earnings</h4>
             <small>Your earnings from all the orders</small> <br/>
-            <table className="table table-bordered">
-                <tr className="table-primary">
-                    <th className="table-primary">Order ID</th>
-                    <th className="table-primary">User ID</th>
-                    <th className="table-primary">Order Details</th>
-                    <th className="table-primary">Total Price</th>
-                    <th className="table-primary">Date</th>
-                    <th className="table-primary">Status</th>
+            <table className="table table-hover table-sm">
+                <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>User ID</th>
+                    <th>Order Details</th>
+                    <th>Total Price</th>
+                    <th>Date</th>
+                    <th>Status</th>
                 </tr>
+                </thead>
+                <tbody>
                 {
                     orders.map((item, i) => (
-                        <tr key={i}>
+                        <tr key={i} className="table-responsive-sm">
                             <td>{item.order_id}</td>
                             <td>{item.user_id}</td>
-                            <td><Link to={"/seller/earnings/"+item.order_id} className="btn btn-outline-primary">Details</Link></td>
+                            <td><Link to={"/seller/earning/"+item.order_id} className="btn btn-outline-primary btn-sm"><i className="icon material-symbols-outlined">info</i></Link></td>
                             <td>{item.total_price}$</td>
                             <td>{item.order_date}</td>
                             <td>{item.status}</td>
@@ -52,6 +55,9 @@ const SellerEarnings = () =>{
                         </tr>
                     ))
                 }
+                </tbody>
+
+
             </table>
 
 

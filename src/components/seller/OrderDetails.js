@@ -27,24 +27,29 @@ const OrderDetails = () =>{
 
             <h4>Order Details For Order {order.id}</h4>
             <br/>
-            <table className="table table-bordered">
-                <tr className="table-primary">
-                    <th className="table-primary">Medicine ID</th>
-                    <th className="table-primary">Quantity</th>
-                    <th className="table-primary">Unit Price</th>
-                    <th className="table-primary">Total Price</th>
+            <table className="table table-hover table-sm">
+                <thead>
+                <tr>
+                    <th>Medicine ID</th>
+                    <th>Quantity</th>
+                    <th>Unit Price</th>
+                    <th>Total Price</th>
                 </tr>
-                {
-                    order.map((item, i) => (
-                        <tr key={i}>
-                            <td>{item.medicine_id}</td>
-                            <td>{item.quantity}</td>
-                            <td>{item.unit_price}$</td>
-                            <td>{item.total_price}$</td>
-                            <br/>
-                        </tr>
-                    ))
-                }
+                </thead>
+             <tbody>
+             {
+                 order.map((item, i) => (
+                     <tr key={i} className="table-responsive-sm">
+                         <td>{item.medicine_id}</td>
+                         <td>{item.quantity}</td>
+                         <td>{item.unit_price}$</td>
+                         <td>{item.total_price}$</td>
+                         <br/>
+                     </tr>
+                 ))
+             }
+             </tbody>
+
             </table>
         </div>
     )

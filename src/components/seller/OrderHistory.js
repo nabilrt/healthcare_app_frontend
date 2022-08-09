@@ -24,14 +24,17 @@ const OrderHistory = () =>{
 
             <h4>Manage Orders</h4>
             <small>You can update order status here</small> <br/>
-            <table className="table table-bordered">
-                <tr className="table-primary">
-                    <th className="table-primary">Order ID</th>
-                    <th className="table-primary">User ID</th>
-                    <th className="table-primary">Total Price</th>
-                    <th className="table-primary">Status</th>
-                    <th className="table-primary">Action</th>
+            <table className="table table-hover table-sm">
+                <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>User ID</th>
+                    <th>Total Price</th>
+                    <th>Status</th>
+                    <th>Action</th>
                 </tr>
+                </thead>
+                <tbody>
                 {
                     orders.map((item, i) => (
                         <tr key={i}>
@@ -39,11 +42,12 @@ const OrderHistory = () =>{
                             <td>{item.user_id}</td>
                             <td>{item.total_price}$</td>
                             <td>{item.status}</td>
-                            <td><Link to={"/seller/order/update/"+item.order_id} className="btn btn-outline-primary">Update Status</Link></td>
+                            <td>{item.status !=="Cancelled" ? <Link to={"/seller/order/update/"+item.order_id} className="btn btn-outline-primary btn-sm"><i className="icon material-symbols-outlined">update</i></Link> : "" }</td>
                             <br/>
                         </tr>
                     ))
                 }
+                </tbody>
             </table>
 
 

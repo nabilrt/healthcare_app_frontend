@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import {useNavigate, useParams} from "react-router-dom";
 import axios from "axios";
 
@@ -39,9 +38,12 @@ const EditMedicine = () =>{
     return(
         <div className="container">
 
-            <form action="">
-                <label htmlFor="quantity" className="form-label">Quantity</label>
-                <input type="number" name="" id="quantity" className="form-control" value={quantity} onChange={(e)=>setQuantity(e.target.value)}/>
+            <form action="" className="mt-4">
+                <div className="col-md-6">
+                    <label htmlFor="quantity" className="form-label">Quantity</label> <br/>
+                    <input type="text" name="" id="quantity" className="form-text" value={quantity} onChange={(e)=>setQuantity(e.target.value)}/>
+                </div>
+
             </form> <br/>
             <button className="btn btn-outline-primary" onClick={updateMedicine}>Update</button>
         </div>
