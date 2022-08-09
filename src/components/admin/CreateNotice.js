@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
-import AdminHeader from "../headers/AdminHeader";
 
 const CreateNotice=()=>{
     const [noticeFor,setNoticeFor]=useState("");
@@ -26,9 +25,7 @@ const CreateNotice=()=>{
 
     return(
         <div className="container">
-            <br/>
-            <AdminHeader/>
-            <br/>
+
             <h4>Give Notice to Users</h4>
             <form action="" className="row g-3">
                 <div className="col-md-12">

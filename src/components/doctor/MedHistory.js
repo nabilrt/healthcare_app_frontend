@@ -39,7 +39,7 @@ const MedHistory = () =>{
                     medHistory.map((item, i) => (
                         <tr key={i} className="table-hover table-sm">
                             <td>{item.his_id}</td>
-                            <td><Link to={"/doctor/medical/history/"+item.his_id} className="btn btn-info btn-sm">Check</Link></td>
+                            <td><Link to={"/doctor/medical/history/"+item.his_id} className="btn btn-outline-info btn-sm"><i className="icon material-symbols-outlined">info</i></Link></td>
                             <td>{item.appointment_id}</td>
                             <td>{item.patient_id}</td>
                             <br/>

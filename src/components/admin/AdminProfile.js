@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useNavigate} from "react-router-dom";
 import axios from "axios";
-import AdminHeader from "../headers/AdminHeader";
+
 
 const AdminProfile = () => {
     const [passwordShown, setPasswordShown] = useState(false);
@@ -50,9 +50,7 @@ const AdminProfile = () => {
     }
     return (
         <div className="container">
-            <br/>
-            <AdminHeader/>
-            <br/>
+
             <h4>Admin Profile</h4> <br/>
             <form action="" className="row g-3">
                 <div className="col-md-6">

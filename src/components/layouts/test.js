@@ -4,6 +4,7 @@ import TopNav from "../inc/TopNav"
 import PatientDash from "../patient/PatientDash"
 import PatientProfile from '../patient/PatientProfile'
 import PatientInbox from "../patient/PatientInbox";
+import PatientConv from "../patient/PatientConv";
 
 const test = (props) => {
 
@@ -14,6 +15,9 @@ const test = (props) => {
             return <PatientProfile />;
         }else if (props.path === "inbox") {
             return <PatientInbox />;
+        }
+        else if (props.path === "conversation") {
+            return <PatientConv />;
         }
     };
 

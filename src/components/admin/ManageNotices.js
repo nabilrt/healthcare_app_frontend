@@ -2,7 +2,6 @@ import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 import {Link} from "react-router-dom";
-import AdminHeader from "../headers/AdminHeader";
 
 const ManageNotices=()=>{
     const[notices,setNotices]=useState([]);
@@ -22,30 +21,30 @@ const ManageNotices=()=>{
 
     return(
         <div className="container">
-            <br/>
-            <AdminHeader/>
-            <br/>
             <h4>Manage Notices</h4> <br/>
-            <table className="table table-bordered">
-                <tr className="table-primary">
-                    <th className="table-primary">Notice ID</th>
-                    <th className="table-primary">Message</th>
-                    <th className="table-primary">For</th>
+            <table className="table table-hover table-sm">
+                <thead>
+                <tr>
+                    <th>Notice ID</th>
+                    <th>Message</th>
+                    <th>For</th>
                     <th></th>
                 </tr>
+                </thead>
+                <tbody>
                 {
                     notices.map((item, i) => (
                         <tr key={i}>
                             <td>{item.notice_id}</td>
                             <td>{item.message}</td>
                             <td>{item.notice_for}</td>
-                            <td><Link to={"/admin/notice/delete/"+item.notice_id} className="btn btn-outline-danger">Delete</Link></td>
+                            <td><Link to={"/admin/notice/delete/"+item.notice_id} className="btn btn-outline-danger btn-sm"><i className="icon material-symbols-outlined">clear</i></Link></td>
                             <br/>
                         </tr>
                     ))
                 }
+                </tbody>
             </table>
-
         </div>
     )
 

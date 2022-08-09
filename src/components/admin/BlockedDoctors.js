@@ -2,7 +2,6 @@ import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 import {Link} from "react-router-dom";
-import AdminHeader from "../headers/AdminHeader";
 
 const BlockedDoctors =() => {
     const[doctors,setDoctors]=useState([]);
@@ -26,22 +25,22 @@ const BlockedDoctors =() => {
 
     return(
         <div className="container">
-            <br/>
-            <AdminHeader/>
-            <br/>
+
             <h4>Blocked Doctor List</h4>
             <br/>
-            <table className="table table-bordered">
-                <tr className="table-primary">
-                    <th className="table-primary">ID</th>
-                    <th className="table-primary">Name</th>
-                    <th className="table-primary">Type</th>
-                    <th className="table-primary">Speciality</th>
-                    <th className="table-primary">Status</th>
-                    <th className="table-primary">Block</th>
-
+            <table className="table table-hover table-sm">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Speciality</th>
+                    <th>Status</th>
+                    <th>Block</th>
                     <th></th>
                 </tr>
+                </thead>
+                <tbody>
                 {
                     doctors.map((item, i) => (
                         <tr key={i}>
@@ -49,14 +48,14 @@ const BlockedDoctors =() => {
                             <td>{item.doctor_name}</td>
                             <td>{item.doctor_type}</td>
                             <td>{item.doctor_specialty}</td>
-                            <td>{item.status}</td>
-                            <td><Link to={"/admin/doctor/unblock/"+item.doctor_id} className="btn btn-outline-primary">Unblock</Link></td>
+                            <td><span className="badge border border-danger text-danger mt-2">{item.status}</span></td>
+                            <td><Link to={"/admin/doctor/unblock/"+item.doctor_id} className="btn btn-outline-success btn-sm"><i className="icon material-symbols-outlined">done</i></Link></td>
                             <br/>
                         </tr>
                     ))
                 }
+                </tbody>
             </table>
-
         </div>
     )
 

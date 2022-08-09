@@ -29,28 +29,55 @@ const Support=()=>{
 
     return(
 
-        <div className="container">
-
-            <h4>Contact Support</h4> <br/>
-            <form action="">
-                <div className="mb-3">
-                    <label htmlFor="email" className="form-label">User ID</label>
-                    <input
-                        type="text"
-                        className="form-control"
-                        id="email"
-                        name="id"
-                        placeholder="Enter your ID"
-                        value={id}
-                        onChange={(e)=>setID(e.target.value)}
-                        autoFocus
-                    />
+        <div className="wrapper">
+            <section className="sign-in-page">
+                <div id="container-inside">
+                    <div id="circle-small"></div>
+                    <div id="circle-medium"></div>
+                    <div id="circle-large"></div>
+                    <div id="circle-xlarge"></div>
+                    <div id="circle-xxlarge"></div>
                 </div>
-            </form> <br/>
-            <span className="text-danger">{error}</span>
-            <br/>
-            <button className="btn btn-outline-dark" onClick={sendReq}>Send Request</button>
+                <div className="container p-0">
+                    <div className="row no-gutters">
+                        <div className="col-md-6 text-center pt-5">
+                            <div className="sign-in-detail text-white">
+                                <a className="" href="#"><img src="../assets/images/default.png"
+                                                              className="img-fluid" alt="logo"
+                                /></a>
+
+                            </div>
+                        </div>
+                        <div className="col-md-6 bg-white pt-5 pt-5 pb-lg-0 pb-5">
+                            <div className="sign-in-from">
+                                <h1 className="mb-0">Contact Support</h1> <br/>
+                                <form action="">
+                                    <div className="mb-3">
+                                        <label htmlFor="email" className="form-label">User ID</label>
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            id="email"
+                                            name="id"
+                                            placeholder="Enter your ID"
+                                            value={id}
+                                            onChange={(e)=>setID(e.target.value)}
+                                            autoFocus
+                                        />
+                                    </div>
+                                </form>
+                                <span className="text-danger">{error}</span>
+                                <br/>
+                                <button className="btn btn-outline-dark btn-sm" onClick={sendReq}><i className="icon material-symbols-outlined">send</i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
         </div>
+
+
 
 
     )

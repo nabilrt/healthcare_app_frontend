@@ -25,6 +25,27 @@ import EditMedicine from "./components/seller/EditMedicine";
 import DeleteMedicine from "./components/seller/DeleteMedicine";
 import SearchMedicine from "./components/seller/SearchMedicine";
 import SellerLayout from "./components/layouts/SellerLayout";
+import AdminDash from "./components/admin/AdminDash";
+import AdminProfile from "./components/admin/AdminProfile";
+import CreateNotice from "./components/admin/CreateNotice";
+import ManageNotices from "./components/admin/ManageNotices";
+import DeleteNotice from "./components/admin/DeleteNotice";
+import CreateExpense from "./components/admin/CreateExpense";
+import ManageExpense from "./components/admin/ManageExpense";
+import EditExpense from "./components/admin/EditExpense";
+import DeleteExpense from "./components/admin/DeleteExpense";
+import ValidDoctor from "./components/admin/ValidDoctor";
+import BlockedDoctors from "./components/admin/BlockedDoctors";
+import BlockDoctor from "./components/admin/BlockDoctor";
+import UnblockDoctor from "./components/admin/UnblockDoctor";
+import ValidPatient from "./components/admin/ValidPatient";
+import BlockedPatients from "./components/admin/BlockedPatients";
+import BlockPatient from "./components/admin/BlockPatient";
+import UnblockPatient from "./components/admin/UnblockPatient";
+import AdminLayout from "./components/layouts/AdminLayout";
+import PatientConv from "./components/patient/PatientConv";
+import Support from "./components/Support";
+import ConfirmationSupport from "./components/ConfirmationSupport";
 
 var token = null;
 if(localStorage.getItem('doctor')){
@@ -45,10 +66,13 @@ root.render(
           <Route path="/verify" element={<Verify/>}></Route>
           <Route path="/register/doctor" element={<DocRegister/>}/>
           <Route path="/register/patient" element={<PatientRegister/>}/>
+          <Route path="/contact/support" element={<Support/>}/>
+          <Route path="/contact/support/confirm" element={<ConfirmationSupport/>}/>
 
           (Patient Pages)
           <Route path="/patient/dashboard" element={<PatientLayout path="dashboard" />} />
           <Route  path="/patient/inbox" element={<PatientLayout path="inbox" />} />
+          <Route path="/patient/conversation/:id" element={<PatientLayout path="conversation"/>}></Route>
 
           (Doctor Pages)
           <Route path="/doctor/dashboard" element={<DocLayout path="dashboard"/>}/>
@@ -79,7 +103,26 @@ root.render(
           <Route path="/seller/medicines/all" element={<SellerLayout path="medicines/all"/>}/>
           <Route path="/seller/medicine/update/:id" element={<SellerLayout path="medicine/update"/>}/>
           <Route path="/seller/medicine/delete/:id" element={<SellerLayout path="medicine/delete"/>}/>
-          <Route path="/seller/medicine/search" element={<SellerLayout path="medicine/search"/>}></Route>
+          <Route path="/seller/medicine/search" element={<SellerLayout path="medicine/search"/>}/>
+
+          (Admin Pages)
+          <Route path="/admin/dashboard" element={<AdminLayout path="dashboard"/>}/>
+          <Route path="/admin/profile" element={<AdminLayout path="profile"/>}/>
+          <Route path="/admin/notice/create" element={<AdminLayout path="notice/create"/>}/>
+          <Route path="/admin/notices/all" element={<AdminLayout path="notices/all"/>}/>
+          <Route path="/admin/notice/delete/:id" element={<AdminLayout path="notice/delete"/>}/>
+          <Route exact path="/admin/expense/add" element={<AdminLayout path="expense/add"/>}/>
+          <Route path="/admin/expenses/all" element={<AdminLayout path="expenses/all"/>}/>
+          <Route path="/admin/expense/edit/:id" element={<AdminLayout path="expense/edit"/>}/>
+          <Route path="/admin/expense/delete/:id" element={<AdminLayout path="expense/delete"/>}/>
+          <Route path="/admin/doctors/valid" element={<AdminLayout path="doctors/valid"/>}/>
+          <Route path="/admin/doctors/blocked" element={<AdminLayout path="doctors/blocked"/>}/>
+          <Route path="/admin/doctor/block/:id" element={<AdminLayout path="doctor/block"/>}/>
+          <Route path="/admin/doctor/unblock/:id" element={<AdminLayout path="doctor/unblock"/>}/>
+          <Route path="/admin/patients/valid" element={<AdminLayout path="patients/valid"/>}/>
+          <Route path="/admin/patients/blocked" element={<AdminLayout path="patients/blocked"/>}/>
+          <Route path="/admin/patient/block/:id" element={<AdminLayout path="patient/block"/>}/>
+          <Route path="/admin/patient/unblock/:id" element={<AdminLayout path="patient/unblock"/>}/>
 
       </Routes>
     </Router>

@@ -34,7 +34,7 @@ const PatientInbox = () =>{
                 <br/>
                 <h4>Inbox</h4>
                 <small>Contains all the conversations</small> <br/>
-                <table className="table table-hover">
+                <table className="table table-hover table-sm">
                                 <thead>
                                 <tr>
                                     <th>Inbox ID</th>
@@ -51,7 +51,7 @@ const PatientInbox = () =>{
                                             <td>{item.inbox_id}</td>
                                             <td>{item.doctor_id}</td>
                                             <td>{item.appointment_id}</td>
-                                            <td><Link to={"/patient/inbox/"+item.inbox_id} className="btn btn-outline-dark btn-sm"><i className="icon material-symbols-outlined">
+                                            <td><Link to={"/patient/conversation/"+item.inbox_id} className="btn btn-outline-dark btn-sm"><i className="icon material-symbols-outlined">
                                                 chat
                                             </i></Link></td>
                                             <br/>

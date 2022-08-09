@@ -80,8 +80,9 @@ const Login = () =>{
                         </div>
                         <div className="col-md-6 bg-white pt-5 pt-5 pb-lg-0 pb-5">
                             <div className="sign-in-from">
-                                <h1 className="mb-0">Sign in</h1>
-                                <p>Enter your User ID and Password</p>
+                                <h3 className="mb-0">AS Health Care App</h3>
+                                <small>Your Most Trusted Health Partner</small> <br/> <br/>
+                                <h4 className="mb-0">Sign in</h4>
                                 <form className="mt-4">
                                     <div className="form-group">
                                         <label className="form-label" htmlFor="exampleInputEmail1">User ID</label>
@@ -101,7 +102,10 @@ const Login = () =>{
                                     <div className="sign-info">
                                         <span
                                             className="dark-color d-inline-block line-height-2">Don't have an account? <Link
-                                            to="/register">Sign up</Link></span>
+                                            to="/register">Sign up</Link></span> <br/> <br/>
+                                        <span
+                                            className="dark-color d-inline-block line-height-2">Account Issue? <Link
+                                            to="/contact/support">Contact Support</Link></span>
                                     </div>
                                 </form>
                             </div>

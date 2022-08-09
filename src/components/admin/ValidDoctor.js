@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 import {Link} from "react-router-dom";
-import AdminHeader from "../headers/AdminHeader";
+
 
 const ValidDoctor=()=>{
     const[doctors,setDoctors]=useState([]);
@@ -26,22 +26,22 @@ const ValidDoctor=()=>{
 
     return(
         <div className="container">
-            <br/>
-            <AdminHeader/>
-            <br/>
+
             <h4>Valid Doctor List</h4>
             <br/>
-            <table className="table table-bordered">
-                <tr className="table-primary">
-                    <th className="table-primary">ID</th>
-                    <th className="table-primary">Name</th>
-                    <th className="table-primary">Type</th>
-                    <th className="table-primary">Speciality</th>
-                    <th className="table-primary">Status</th>
-                    <th className="table-primary">Block</th>
-
+            <table className="table table-hover table-sm">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Speciality</th>
+                    <th>Status</th>
+                    <th>Block</th>
                     <th></th>
                 </tr>
+                </thead>
+                <tbody>
                 {
                     doctors.map((item, i) => (
                         <tr key={i}>
@@ -49,12 +49,13 @@ const ValidDoctor=()=>{
                             <td>{item.doctor_name}</td>
                             <td>{item.doctor_type}</td>
                             <td>{item.doctor_specialty}</td>
-                            <td>{item.status}</td>
-                            <td><Link to={"/admin/doctor/block/"+item.doctor_id} className="btn btn-outline-danger">Block</Link></td>
+                            <td><span className="badge border border-success text-success mt-2">{item.status}</span></td>
+                            <td><Link to={"/admin/doctor/block/"+item.doctor_id} className="btn btn-outline-danger btn-sm"><i className="icon material-symbols-outlined">block</i></Link></td>
                             <br/>
                         </tr>
                     ))
                 }
+                </tbody>
             </table>
 
         </div>
