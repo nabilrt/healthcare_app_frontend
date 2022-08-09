@@ -28,16 +28,19 @@ const DocSchedule = () => {
          <br/>
          <h4>Doctor Schedule</h4>
          <br/>
-         <table className="table table-bordered">
-             <tr className="table-primary">
-                 <th className="table-primary">Appointment ID</th>
-                 <th className="table-primary">Date</th>
-                 <th className="table-primary">Time</th>
+         <table className="table table-hover table-sm">
+             <thead>
+             <tr >
+                 <th >Appointment ID</th>
+                 <th >Date</th>
+                 <th >Time</th>
 
 
              </tr>
+             </thead>
+             <tbody>
              {
-               schedule.map((item, i) => (
+                 schedule.map((item, i) => (
                      <tr key={i}>
                          <td>{item.appointment_id}</td>
                          <td>{item.app_date}</td>
@@ -49,6 +52,9 @@ const DocSchedule = () => {
                      </tr>
                  ))
              }
+             </tbody>
+
+
          </table>
 
      </div>

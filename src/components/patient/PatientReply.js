@@ -16,7 +16,7 @@ const PatientReply = () =>{
         let obj={reply:reply,c_id:id};
         axios.post("http://127.0.0.1:8000/api/patient/convo/reply",obj)
             .then(resp=>{
-                history("/patient/inbox/"+id);
+                history("/patient/inbox");
             }).catch(err=>{
             console.log(err.response.data);
         });

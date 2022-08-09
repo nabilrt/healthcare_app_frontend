@@ -24,11 +24,14 @@ const PatientNotice = () => {
         <div className="container">
 
             <h4>Notices For Patient</h4> <br/>
-            <table className="table table-bordered">
-                <tr className="table-primary">
-                    <th className="table-primary">Notice ID</th>
-                    <th className="table-primary">Message</th>
+            <table className="table table-hover table-sm">
+                <thead>
+                <tr >
+                    <th >Notice ID</th>
+                    <th>Message</th>
                 </tr>
+                </thead>
+                <tbody>
                 {
                     notices.map((item, i) => (
                         <tr key={i}>
@@ -38,6 +41,9 @@ const PatientNotice = () => {
                         </tr>
                     ))
                 }
+                </tbody>
+
+
             </table>
 
         </div>

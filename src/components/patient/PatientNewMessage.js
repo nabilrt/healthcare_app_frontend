@@ -14,7 +14,7 @@ const PatientNewMessage = () =>{
         let obj={msg:newMessage,i_id:id};
         axios.post("http://127.0.0.1:8000/api/patient/convo/message/new",obj)
             .then(resp=>{
-                history("/patient/inbox/"+id);
+                history("/patient/conversation/"+id);
             }).catch(err=>{
             console.log(err.response.data);
         });

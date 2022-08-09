@@ -40,8 +40,8 @@ const PatientReview = () =>{
                 <label htmlFor="comment" className="form-label">Comment</label>
                 <textarea name="" id="comment" cols="30" rows="10" className="form-control" value={comment} onChange={(e)=>setComment(e.target.value)}></textarea>
             </form> <br/>
-            <button className="btn btn-outline-success" onClick={postReview}>Post Review</button> &nbsp;
-            <Link to="/patient/review/all" className="btn btn-outline-success">Previous Feedbacks</Link>
+            <button className="btn btn-outline-success btn-sm" onClick={postReview}><i className="icon material-symbols-outlined">post_add</i></button> &nbsp;
+            <Link to="/patient/review/all " className="btn btn-outline-success btn-sm"><i className="icon material-symbols-outlined">manage_history</i></Link>
             <br/>
             <p className="text-success">{successMsg}</p>
         </div>

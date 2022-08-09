@@ -21,33 +21,33 @@ const NormalDoctor = () => {
     },[]);
     return (
         <div className="container">
-            <table className="table table-bordered">
-                <tr className="table-primary">
-                    <th className="table-primary">Doctor Name</th>
-                    <th className="table-primary">Doctor Type</th>
-                    <th className="table-primary">Speciality</th>
-                    <th className="table-primary">Remuneration</th>
-                    <th className="table-primary">Schedule</th>
-
-
-
+            <table className="table table-hover table-sm">
+                <thead>
+                <tr >
+                    <th >Doctor Name</th>
+                    <th>Doctor Type</th>
+                    <th>Speciality</th>
+                    <th >Remuneration</th>
+                    <th >Schedule</th>
 
                 </tr>
+                </thead>
+                <tbody>
                 {
                     doctors.map((item, i) => (
                         <tr key={i}>
                             <td>{item.doctor_name}</td>
                             <td>{item.doctor_type}</td>
                             <td>{item.doctor_specialty}</td>
-                            <td>{item.visit}$</td>
+                            <td>{<s>{item.visit}</s>}{item.visit - (item.visit * (item.discount_per)/100)}$</td>
                             <td> <Link to={'/patient/doctor/appointment/'+item.doctor_id}>Take Appointment</Link></td>
                             <td><Link to={'/patient/doctor/schedule/'+item.doctor_id}>Check Schedule</Link></td>
-
-
                             <br/>
                         </tr>
                     ))
                 }
+                </tbody>
+
             </table>
 
 

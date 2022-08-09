@@ -81,9 +81,9 @@ const PatientProfile=()=>{
 
 
             </form>
+                <br/>
 
-
-            <button className="btn btn-outline-warning" onClick={saveChanges}>Save Changes</button>
+            <button className="btn btn-outline-warning btn-sm" onClick={saveChanges}><i className="icon material-symbols-outlined">save</i></button>
 
 
         </div>

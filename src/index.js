@@ -46,6 +46,21 @@ import AdminLayout from "./components/layouts/AdminLayout";
 import PatientConv from "./components/patient/PatientConv";
 import Support from "./components/Support";
 import ConfirmationSupport from "./components/ConfirmationSupport";
+import PatientNewMessage from "./components/patient/PatientNewMessage";
+import PatientReply from "./components/patient/PatientReply";
+import Membership from "./components/patient/Membership";
+import Doctors from "./components/patient/Doctors";
+import DocSchedule from "./components/patient/DocSchedule";
+import DocAppointment from "./components/patient/DocAppointment";
+import Shop from "./components/patient/Shop";
+import AddToCart from "./components/patient/AddToCart";
+import Cart from "./components/patient/Cart";
+import ConfirmCheckout from "./components/patient/ConfirmCheckout";
+import PatientOrderHistory from "./components/patient/PatientOrderHistory";
+import PatientNotice from "./components/patient/PatientNotice";
+import PatientPrevReview from "./components/patient/PatientPrevReview";
+import PatientReview from "./components/patient/PatientReview";
+import PatientProfile from "./components/patient/PatientProfile";
 
 var token = null;
 if(localStorage.getItem('doctor')){
@@ -73,6 +88,22 @@ root.render(
           <Route path="/patient/dashboard" element={<PatientLayout path="dashboard" />} />
           <Route  path="/patient/inbox" element={<PatientLayout path="inbox" />} />
           <Route path="/patient/conversation/:id" element={<PatientLayout path="conversation"/>}></Route>
+          <Route path="/patient/conversation/message/new/:id" element={<PatientLayout path="conversation/message/new"/>}></Route>
+          <Route path="/patient/conversation/reply/:id" element={<PatientLayout path="conversation/reply"/>}></Route>
+          <Route path="/patient/membership/info" element={<PatientLayout path="membership/info"/>}></Route>
+          <Route path="/patient/doctors/all" element={<PatientLayout path="doctors/all"/>}></Route>
+          <Route path="/patient/doctor/schedule/:id" element={<PatientLayout path="doctor/schedule"/>}></Route>
+          <Route path="/patient/doctor/appointment/:id" element={<PatientLayout path="doctor/appointment"/>}/>
+          <Route path="/patient/shop" element={<PatientLayout path="patient/shop"/>}></Route>
+          <Route path="/patient/cart/add/:id" element={<PatientLayout path="cart/add"/>}/>
+          <Route path="/patient/cart" element={<PatientLayout path="cart"/>}/>
+          <Route path="/patient/checkout/confirm" element={<PatientLayout path="checkout/confirm"/>}/>
+          <Route path="/patient/orders" element={<PatientLayout path="orders"/>}/>
+          <Route path="/patient/notices" element={<PatientLayout path="notices"/>}></Route>
+          <Route path="/patient/review/all" element={<PatientLayout path="review/all"/>}></Route>
+          <Route path="/patient/review/post" element={<PatientLayout path="review/post"/>}></Route>
+          <Route path="/patient/profile" element={<PatientLayout path="profile"/>}></Route>
+
 
           (Doctor Pages)
           <Route path="/doctor/dashboard" element={<DocLayout path="dashboard"/>}/>

@@ -71,17 +71,20 @@ const Cart=()=>{
 
             <br/>
             <h4>Cart</h4> <br/>
-            <table className="table table-bordered">
-                <tr className="table-primary">
-                    <th className="table-primary">Medicine ID</th>
-                    <th className="table-primary">Name</th>
-                    <th className="table-primary">Quantity</th>
-                    <th className="table-primary">Unit Price</th>
-                    <th className="table-primary">Total Price</th>
+            <table className="table table-hover table-sm">
+                <thead>
+                <tr >
+                    <th >Medicine ID</th>
+                    <th >Name</th>
+                    <th>Quantity</th>
+                    <th >Unit Price</th>
+                    <th>Total Price</th>
                     <th></th>
                 </tr>
+                </thead>
+                <tbody>
                 {
-                   meds.map((item, i) => (
+                    meds.map((item, i) => (
                         <tr key={i}>
                             <td>{item.medicine_id}</td>
                             <td>{item.item_name}</td>
@@ -92,9 +95,12 @@ const Cart=()=>{
                         </tr>
                     ))
                 }
+                </tbody>
+
+
             </table> <br/>
-            <button className="btn btn-outline-success" onClick={checkOut}>Checkout</button> &nbsp;
-            <button className="btn btn-outline-danger" onClick={emptyCart}>Empty Cart</button>
+            <button className="btn btn-outline-success btn-sm" onClick={checkOut}><i className="icon material-symbols-outlined">shopping_basket</i></button> &nbsp;
+            <button className="btn btn-outline-danger btn-sm" onClick={emptyCart}><i className="icon material-symbols-outlined">remove_shopping_cart</i></button>
             <br/>
             <p className="text-danger">{error}</p>
         </div>

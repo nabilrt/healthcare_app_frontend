@@ -26,11 +26,14 @@ const PatientPrevReview = () =>{
         <div className="container">
 
             <h4>Your Previous Feedbacks</h4> <br/>
-            <table className="table table-bordered">
-                <tr className="table-primary">
-                    <th className="table-primary">Review ID</th>
-                    <th className="table-primary">Comment</th>
+            <table className="table table-hover table-sm">
+                <thead>
+                <tr >
+                    <th >Review ID</th>
+                    <th >Comment</th>
                 </tr>
+                </thead>
+                <tbody>
                 {
                     reviews.map((item, i) => (
                         <tr key={i}>
@@ -40,6 +43,9 @@ const PatientPrevReview = () =>{
                         </tr>
                     ))
                 }
+                </tbody>
+
+
             </table>
         </div>
     )

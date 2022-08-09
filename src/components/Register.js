@@ -33,12 +33,12 @@ const Register = () =>{
                                      <Link to="/register/doctor" className="btn btn-primary hover mb-1">Join as Doctor</Link>
                                     </div>
                                     <div className="form-group">
-                                        <Link to="/patient/register" className="btn btn-info mb-1">Join as User</Link>
+                                        <Link to="/register/patient" className="btn btn-info mb-1">Join as User</Link>
                                     </div>
                                     <div className="sign-info">
                                         <span
                                             className="dark-color d-inline-block line-height-2">Already have an account? <Link
-                                            to="/login">Sign up</Link></span>
+                                            to="/login">Sign in</Link></span>
                                     </div>
                                 </form>
                             </div>

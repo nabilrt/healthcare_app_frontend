@@ -41,15 +41,18 @@ const Shop = () =>{
                 <label htmlFor="key" className="form-label">Search by Name</label>
                 <input type="text" name="" id="key" value={key} onChange={(e)=>setKey(e.target.value)} onKeyUp={searchMedicine} className="form-control"/>
             </form> <br/>
-            <table className="table table-bordered">
-                <tr className="table-primary">
-                    <th className="table-primary">Medicine ID</th>
-                    <th className="table-primary">Name</th>
-                    <th className="table-primary">Type</th>
-                    <th className="table-primary">Quantity</th>
-                    <th className="table-primary">Unit Price</th>
+            <table className="table table-hover table-sm">
+                <thead>
+                <tr >
+                    <th >Medicine ID</th>
+                    <th >Name</th>
+                    <th >Type</th>
+                    <th >Quantity</th>
+                    <th >Unit Price</th>
                     <th></th>
                 </tr>
+                </thead>
+                <tbody>
                 {
                     medicines.map((item, i) => (
                         <tr key={i}>
@@ -58,12 +61,15 @@ const Shop = () =>{
                             <td>{item.medicine_type}</td>
                             <td>{item.quantity}</td>
                             <td>{item.medicine_price}$</td>
-                            <td><Link to={"/patient/cart/add/"+item.medicine_id} className="btn btn-outline-warning">Add to Cart</Link></td>
+                            <td><Link to={"/patient/cart/add/"+item.medicine_id} className="btn btn-outline-warning btn-sm"><i className="icon material-symbols-outlined">add_shopping_cart</i></Link></td>
 
                             <br/>
                         </tr>
                     ))
                 }
+                </tbody>
+
+
             </table>
 
         </div>

@@ -5,6 +5,20 @@ import PatientDash from "../patient/PatientDash"
 import PatientProfile from '../patient/PatientProfile'
 import PatientInbox from "../patient/PatientInbox";
 import PatientConv from "../patient/PatientConv";
+import PatientNewMessage from "../patient/PatientNewMessage";
+import PatientReply from "../patient/PatientReply";
+import Membership from "../patient/Membership";
+import Doctors from "../patient/Doctors";
+import DocSchedule from "../patient/DocSchedule";
+import DocAppointment from "../patient/DocAppointment";
+import Shop from "../patient/Shop";
+import Cart from "../patient/Cart";
+import AddToCart from "../patient/AddToCart";
+import ConfirmCheckout from "../patient/ConfirmCheckout";
+import PatientOrderHistory from "../patient/PatientOrderHistory";
+import PatientNotice from "../patient/PatientNotice";
+import PatientReview from "../patient/PatientReview";
+import PatientPrevReview from "../patient/PatientPrevReview";
 
 const test = (props) => {
 
@@ -19,6 +33,53 @@ const test = (props) => {
         else if (props.path === "conversation") {
             return <PatientConv />;
         }
+        else if (props.path === "conversation/message/new") {
+            return <PatientNewMessage />;
+        }
+        else if (props.path === "conversation/reply") {
+            return <PatientReply />;
+        }
+        else if (props.path === "membership/info") {
+            return <Membership />;
+        }
+        else if (props.path === "doctors/all") {
+            return <Doctors />;
+        }
+        else if (props.path === "doctor/schedule") {
+            return <DocSchedule />;
+        }
+        else if (props.path === "doctor/appointment") {
+            return <DocAppointment />;
+        }
+        else if (props.path === "patient/shop") {
+            return <Shop />;
+        }
+        else if (props.path === "cart") {
+            return <Cart />;
+        }
+
+        else if (props.path === "cart/add") {
+            return <AddToCart />;
+        }
+        else if (props.path === "checkout/confirm") {
+            return <ConfirmCheckout />;
+        }
+        else if (props.path === "orders") {
+            return <PatientOrderHistory />;
+        }
+        else if (props.path === "notices") {
+            return <PatientNotice />;
+        }
+        else if (props.path === "review/all") {
+            return <PatientPrevReview />;
+        }
+        else if (props.path === "review/post") {
+            return <PatientReview />;
+        }
+        else if (props.path === "profile") {
+            return <PatientProfile />;
+        }
+
     };
 
     return (

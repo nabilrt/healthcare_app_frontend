@@ -58,11 +58,11 @@ const DocAppointment = () => {
                     <h6>Describe your problem here</h6>
                 <div className="mb-3">
                     <label htmlFor="problem" className="form-label">Problem</label>
-                    <textarea name="" id="" cols="30" rows="10" value={issue} onChange={(e)=>setIssue(e.target.value)} className="form-control"></textarea>
+                    <textarea name="" id="" cols="10" rows="5" value={issue} onChange={(e)=>setIssue(e.target.value)} className="form-control"></textarea>
                 </div>
 
             </form> <br/>
-            <button onClick={check} className="btn btn-outline-primary">Check</button>
+            <button onClick={check} className="btn btn-outline-primary btn-sm"><i className="icon material-symbols-outlined">event_available</i></button>
 
         </div>
 
