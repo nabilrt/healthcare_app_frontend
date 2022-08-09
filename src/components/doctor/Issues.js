@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import {useParams} from "react-router-dom";
 import axios from "axios";
-import DoctorHeader from "../headers/DoctorHeader";
 
 const Issues = () =>{
     const{id}=useParams();
@@ -22,9 +20,6 @@ const Issues = () =>{
 
     return(
         <div className="container">
-            <br/>
-            <DoctorHeader/>
-            <br/>
             <h4>Issues</h4> <br/>
             {
                 issues.map((issue)=>(
@@ -35,8 +30,6 @@ const Issues = () =>{
                     )
                 )
             }
-
-
         </div>
     )
 

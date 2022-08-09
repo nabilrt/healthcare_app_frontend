@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useNavigate, useParams} from "react-router-dom";
 import axios from "axios";
-import PatientHeader from "../headers/PatientHeader";
 
 
 const PatientReply = () =>{
@@ -26,9 +25,7 @@ const PatientReply = () =>{
 
     return(
         <div className="container">
-            <br/>
-            <PatientHeader/>
-            <br/>
+
             <h4>Reply</h4>
             <form action="">
                 <label htmlFor="reply" className="form-label">Reply Message</label>

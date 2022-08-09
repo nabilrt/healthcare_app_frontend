@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useParams} from "react-router-dom";
 import axios from "axios";
-import SellerHeader from "../headers/SellerHeader";
+
 
 const OrderDetails = () =>{
     const{id}=useParams();
@@ -24,9 +24,7 @@ const OrderDetails = () =>{
 
     return(
         <div className="container">
-            <br/>
-            <SellerHeader/>
-            <br/>
+
             <h4>Order Details For Order {order.id}</h4>
             <br/>
             <table className="table table-bordered">

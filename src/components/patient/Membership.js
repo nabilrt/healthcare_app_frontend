@@ -1,10 +1,8 @@
 import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
-import {Link, useNavigate} from "react-router-dom";
-import PatientHeader from "../headers/PatientHeader";
-import AllDoctor from "./AllDoctor";
-import NormalDoctor from "./NormalDoctor";
+import {useNavigate} from "react-router-dom";
+
 import TakeMembership from "./TakeMembership";
 import MembershipInfo from "./MembershipInfo";
 const Membership = () => {
@@ -29,9 +27,7 @@ const Membership = () => {
     if (isPremium==="yes"){
         return (
             <div className="container">
-                <br/>
-                <PatientHeader/>
-                <br/>
+
                 <h4>Membership</h4>
 
                 <br/>
@@ -48,9 +44,7 @@ const Membership = () => {
         return (
             <div className="container">
 
-                <br/>
-                <PatientHeader/>
-                <br/>
+
                 <h4>Membership</h4>
                <br/>
 

@@ -2,7 +2,6 @@ import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link, useNavigate, useParams} from "react-router-dom";
 import axios from "axios";
-import PatientHeader from "../headers/PatientHeader";
 
 const Cart=()=>{
 
@@ -69,7 +68,7 @@ const Cart=()=>{
     return(
         <div className="container">
             <br/>
-            <PatientHeader/>
+
             <br/>
             <h4>Cart</h4> <br/>
             <table className="table table-bordered">

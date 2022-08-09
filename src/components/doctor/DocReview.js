@@ -2,7 +2,6 @@ import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 import {Link} from "react-router-dom";
-import DoctorHeader from "../headers/DoctorHeader";
 
 const DocReview = () =>{
     const[comment,setComment]=useState("");
@@ -17,7 +16,6 @@ const DocReview = () =>{
                     setSuccessMsg("Review Posted");
                 }, 2000);
                 console.log('page to reload')
-
             }).catch(
                 err=>{
                     console.log(err.response.data);
@@ -26,17 +24,16 @@ const DocReview = () =>{
 
     return (
         <div className="container">
-            <br/>
-            <DoctorHeader/>
-            <br/>
             <h4>Post Review</h4>
             <small>Give feedback about our system</small> <br/> <br/>
-            <form action="" className="row g-3">
-                <label htmlFor="comment" className="form-label">Comment</label>
-                <textarea name="" id="comment" cols="30" rows="10" className="form-control" value={comment} onChange={(e)=>setComment(e.target.value)}></textarea>
-            </form> <br/>
-            <button className="btn btn-outline-success" onClick={postReview}>Post Review</button> &nbsp;
-            <Link to="/doctor/review/all" className="btn btn-outline-success">Previous Feedbacks</Link>
+            <form action="">
+                <div className="form-group">
+                    <label htmlFor="comment" className="form-label">Comment</label>
+                    <textarea name="" id="comment" cols="30" rows="10" className="form-control" value={comment} onChange={(e)=>setComment(e.target.value)}></textarea>
+                </div>
+            </form>
+            <button className="btn btn-outline-success mb-1 btn-sm" onClick={postReview}><i className="icon material-symbols-outlined">post_add</i></button> &nbsp;
+            <Link to="/doctor/review/all" className="btn btn-outline-warning mb-1 btn-sm"><i className="icon material-symbols-outlined">history</i></Link>
             <br/>
             <p className="text-success">{successMsg}</p>
         </div>

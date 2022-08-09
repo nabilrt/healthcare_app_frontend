@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useNavigate} from "react-router-dom";
 import axios from "axios";
-import SellerHeader from "../headers/SellerHeader";
+
 
 const SellerProfile = () => {
     const [passwordShown, setPasswordShown] = useState(false);
@@ -49,9 +49,7 @@ const SellerProfile = () => {
     }
         return (
             <div className="container">
-                <br/>
-                <SellerHeader/>
-                <br/>
+
                 <h4>Seller Profile</h4> <br/>
                 <form action="" className="row g-3">
                     <div className="col-md-6">

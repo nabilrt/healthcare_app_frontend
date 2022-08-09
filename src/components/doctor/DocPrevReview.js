@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link} from "react-router-dom";
 import axios from "axios";
-import DoctorHeader from "../headers/DoctorHeader";
+
 
 const DocPrevReview = () =>{
     const[reviews,setReviews]=useState([]);
@@ -24,24 +24,27 @@ const DocPrevReview = () =>{
 
     return(
         <div className="container">
-            <br/>
-            <DoctorHeader/>
-            <br/>
-            <h4>Your Previous Feedbacks</h4> <br/>
-            <table className="table table-bordered">
-                <tr className="table-primary">
-                    <th className="table-primary">Review ID</th>
-                    <th className="table-primary">Comment</th>
+            <h4>Your Previous Feedbacks</h4>
+            <table className="table table-hover">
+                <thead>
+                <tr>
+                    <th>Review ID</th>
+                    <th>Comment</th>
                 </tr>
+                </thead>
+                <tbody>
                 {
                     reviews.map((item, i) => (
-                        <tr key={i}>
+                        <tr key={i} className="table-sm">
                             <td>{item.r_id}</td>
                             <td>{item.comment}</td>
                             <br/>
                         </tr>
                     ))
                 }
+                </tbody>
+
+
             </table>
         </div>
     )

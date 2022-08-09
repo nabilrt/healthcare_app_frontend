@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
-import {Link, useNavigate} from "react-router-dom";
-import PatientHeader from "../headers/PatientHeader";
+import {useNavigate} from "react-router-dom";
 const TakeMembership = () => {
     const [amount,setAmount]=useState("");
     const [method,setMethod]=useState("");

@@ -1,8 +1,5 @@
 import React, {useEffect, useState} from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
-import {Link} from "react-router-dom";
-import DoctorHeader from "../headers/DoctorHeader";
 
 const DocNotice = () => {
     const[notices,setNotices]=useState([]);
@@ -22,24 +19,26 @@ const DocNotice = () => {
     return(
 
         <div className="container">
-            <br/>
-            <DoctorHeader/>
-            <br/>
             <h4>Notices For Doctor</h4> <br/>
-            <table className="table table-bordered">
-                <tr className="table-primary">
-                    <th className="table-primary">Notice ID</th>
-                    <th className="table-primary">Message</th>
+            <table className="table table-hover">
+                <thead>
+                <tr>
+                    <th>Notice ID</th>
+                    <th>Message</th>
                 </tr>
+                </thead>
+                <tbody>
                 {
                     notices.map((item, i) => (
-                        <tr key={i}>
+                        <tr key={i} className="table table-sm">
                             <td>{item.notice_id}</td>
                             <td>{item.message}</td>
                             <br/>
                         </tr>
                     ))
                 }
+                </tbody>
+
             </table>
 
         </div>

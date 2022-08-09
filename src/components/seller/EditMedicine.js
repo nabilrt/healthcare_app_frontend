@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useNavigate, useParams} from "react-router-dom";
 import axios from "axios";
-import SellerHeader from "../headers/SellerHeader";
+
 
 const EditMedicine = () =>{
 
@@ -38,9 +38,7 @@ const EditMedicine = () =>{
 
     return(
         <div className="container">
-            <br/>
-            <SellerHeader/>
-            <br/>
+
             <form action="">
                 <label htmlFor="quantity" className="form-label">Quantity</label>
                 <input type="number" name="" id="quantity" className="form-control" value={quantity} onChange={(e)=>setQuantity(e.target.value)}/>

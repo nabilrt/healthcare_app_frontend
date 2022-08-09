@@ -1,11 +1,12 @@
 import React from 'react'
 import {Link} from "react-router-dom";
 
-const SideNav = () => {
-    return (
+const DoctorSideNav=()=>{
+
+    return(
         <div>
             <aside className="sidebar sidebar-default navs-rounded-all " id="first-tour" data-toggle="main-sidebar"
-                data-sidebar="responsive">
+                   data-sidebar="responsive">
                 <div className="sidebar-body pt-0 data-scrollbar">
                     <div className="sidebar-list">
                         <ul className="navbar-nav iq-main-menu" id="sidebar-menu">
@@ -13,12 +14,12 @@ const SideNav = () => {
                                 <a className="nav-link static-item disabled" href="#" tabIndex="-1">
                                     <span className="default-icon">BASIC</span>
                                     <span className="mini-icon" data-bs-toggle="tooltip" title="Social"
-                                        data-bs-placement="right">-</span>
+                                          data-bs-placement="right">-</span>
                                 </a>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" aria-current="page"
-                                    to="/patient/dashboard">
+                                      to="/doctor/dashboard">
                                     <i className="icon material-symbols-outlined">
                                         dashboard
                                     </i>
@@ -27,8 +28,8 @@ const SideNav = () => {
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" data-bs-toggle="collapse" href="#profile" role="button"
-                                    aria-expanded="false"
-                                    aria-controls="profile">
+                                   aria-expanded="false"
+                                   aria-controls="profile">
                                     <i className="icon material-symbols-outlined">
                                         person
                                     </i>
@@ -37,26 +38,25 @@ const SideNav = () => {
                                 </a>
                                 <ul className="sub-nav collapse" id="profile" data-bs-parent="#sidebar-menu">
                                     <li className="nav-item">
-                                        <a className="nav-link "
-                                            href="https://templates.iqonic.design/socialv/bs5/html/dist/app/profile.html">
+                                        <Link className="nav-link "
+                                           to="/doctor/profile">
                                             <i className="icon material-symbols-outlined filled">
                                                 fiber_manual_record
                                             </i>
                                             <i className="sidenav-mini-icon"> P </i>
                                             <span className="item-name"> Profile </span>
-                                        </a>
+                                        </Link>
                                     </li>
-
                                 </ul>
                             </li>
 
                             <li className="nav-item">
                                 <Link className="nav-link " aria-current="page"
-                                    to="/patient/membership/info">
+                                      to="/doctor/remuneration">
                                     <i className="icon material-symbols-outlined">
-                                        loyalty
+                                        currency_exchange
                                     </i>
-                                    <span className="item-name">Membership</span>
+                                    <span className="item-name">Payment Profile</span>
                                 </Link>
                             </li>
 
@@ -64,12 +64,12 @@ const SideNav = () => {
                                 <a className="nav-link static-item disabled" href="#" tabIndex="-1">
                                     <span className="default-icon">Featured</span>
                                     <span className="mini-icon" data-bs-toggle="tooltip" title="Social"
-                                        data-bs-placement="right">-</span>
+                                          data-bs-placement="right">-</span>
                                 </a>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link " aria-current="page"
-                                    to="/patient/inbox">
+                                      to="/doctor/inbox">
                                     <i className="icon material-symbols-outlined">
                                         message
                                     </i>
@@ -78,34 +78,34 @@ const SideNav = () => {
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link " aria-current="page"
-                                    to="/patient/doctors">
+                                      to="/doctor/earnings">
                                     <i className="icon material-symbols-outlined">
-                                        medication
+                                        paid
                                     </i>
-                                    <span className="item-name">Doctors</span>
+                                    <span className="item-name">Earnings</span>
                                 </Link>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link " aria-current="page"
-                                    to="/patient/shop">
+                                      to="/doctor/appointments">
                                     <i className="icon material-symbols-outlined">
-                                        local_pharmacy
+                                        book_online
                                     </i>
-                                    <span className="item-name">Pharmacy</span>
+                                    <span className="item-name">Appointments</span>
                                 </Link>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link " aria-current="page"
-                                    to="/patient/orders">
+                                      to="/doctor/medical/histories">
                                     <i className="icon material-symbols-outlined">
-                                        list_alt
+                                        monitor_heart
                                     </i>
-                                    <span className="item-name">Orders</span>
+                                    <span className="item-name">Medical Histories</span>
                                 </Link>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link " aria-current="page"
-                                    to="patient/notices">
+                                      to="/doctor/notices">
                                     <i className="icon material-symbols-outlined">
                                         forum
                                     </i>
@@ -114,7 +114,7 @@ const SideNav = () => {
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link " aria-current="page"
-                                    to="/patient/review">
+                                      to="/doctor/review/post">
                                     <i className="icon material-symbols-outlined">
                                         rate_review
                                     </i>
@@ -129,6 +129,6 @@ const SideNav = () => {
             </aside>
         </div>
     )
-}
 
-export default SideNav
+}
+export default DoctorSideNav;

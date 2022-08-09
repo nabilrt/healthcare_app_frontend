@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
-import DoctorHeader from "../headers/DoctorHeader";
+
 
 const DocProfile = () =>{
     const [passwordShown, setPasswordShown] = useState(false);
@@ -50,20 +50,17 @@ const DocProfile = () =>{
 
     return (
         <div className="container">
-            <br/>
-            <DoctorHeader/>
-            <br/>
             <h4>Doctor Profile</h4> <br/>
-            <form action="" className="row g-3">
-                <div className="col-md-6">
+            <form action="">
+                <div className="form-group">
                     <label htmlFor="name">Name</label> <br/>
                     <input type="text" name="name" id="name" value={name} onChange={(e)=>setName(e.target.value)} className="form-control"/>
                 </div>
-                <div className="col-md-6">
+                <div className="form-group">
                     <label htmlFor="email">Email</label> <br/>
                     <input type="text" name="email" id="email" value={email} onChange={(e)=>setEmail(e.target.value)} className="form-control"/>
                 </div>
-                <div className="col-md-12">
+                <div className="form-group">
                     <label htmlFor="pass">Password</label> <br/>
                     <input type={passwordShown ? "text" : "password"} name="pass" id="pass" value={pass} onChange={(e)=>setPass(e.target.value)} className="form-control"/>
                     <div className="form-check">

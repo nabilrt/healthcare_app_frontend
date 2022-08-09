@@ -2,8 +2,7 @@ import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 import {Link, useParams} from "react-router-dom";
-import PatientHeader from "../headers/PatientHeader";
-import AllDoctor from "./AllDoctor";
+
 
 const DocSchedule = () => {
     const{id}=useParams();
@@ -25,9 +24,7 @@ const DocSchedule = () => {
  return (
      <div className="container">
         <br/>
-        <PatientHeader>
 
-        </PatientHeader>
          <br/>
          <h4>Doctor Schedule</h4>
          <br/>

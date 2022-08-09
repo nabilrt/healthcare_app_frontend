@@ -2,7 +2,6 @@ import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useNavigate, useParams} from "react-router-dom";
 import axios from "axios";
-import SellerHeader from "../headers/SellerHeader";
 
 const UpdateOrder = () =>{
 
@@ -38,9 +37,7 @@ const UpdateOrder = () =>{
 
     return(
         <div className="container">
-            <br/>
-            <SellerHeader/>
-            <br/>
+
             <form action="">
                 <label htmlFor="status" className="form-label">Order Status</label>
                 <select name="" id="" value={status} onChange={(e)=>setStatus(e.target.value)} className="form-select">

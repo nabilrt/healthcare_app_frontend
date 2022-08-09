@@ -1,21 +1,21 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState} from "react";
 import {Link, useNavigate} from "react-router-dom";
 import axios from "axios";
 
-const TopNav = () => {
+const DoctorTopNav = () => {
 
-    const[name,setName]=useState("");
+    const [name,setName]=useState("");
     let user = JSON.parse(localStorage.getItem('doctor'));
     var obj={token:user.access_token};
     let history=useNavigate();
     axios.defaults.headers.common["Authorization"] = obj.token;
+
     useEffect(()=>{
 
-        axios.post('http://127.0.0.1:8000/api/patient/profile',obj).then(resp=>{
+        axios.post('http://127.0.0.1:8000/api/doctor/profile',obj).then(resp=>{
             console.log(resp.data);
-            setName(resp.data.patient_name)
-
             //   setInbox(resp.data);
+            setName(resp.data.doctor_name);
 
         }).catch(
             err=>{
@@ -85,8 +85,8 @@ const TopNav = () => {
                                         <a href="#" className="d-flex align-items-center dropdown-toggle"
                                            id="drop-down-arrow" data-bs-toggle="dropdown" aria-haspopup="true"
                                            aria-expanded="false">
-                                            <div className="caption">
-                                                <h6 className="mb-0 line-height">{name}</h6>
+                                            <div>
+                                                <h6>{name}</h6>
                                             </div>
                                         </a>
                                         <div className="sub-drop dropdown-menu caption-menu"
@@ -124,4 +124,4 @@ const TopNav = () => {
     )
 }
 
-export default TopNav
+export default DoctorTopNav;

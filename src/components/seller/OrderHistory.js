@@ -2,7 +2,6 @@ import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 import {Link} from "react-router-dom";
-import SellerHeader from "../headers/SellerHeader";
 
 const OrderHistory = () =>{
     const [orders,setOrders]=useState([]);
@@ -22,9 +21,7 @@ const OrderHistory = () =>{
 
     return(
         <div className="container">
-            <br/>
-            <SellerHeader/>
-            <br/>
+
             <h4>Manage Orders</h4>
             <small>You can update order status here</small> <br/>
             <table className="table table-bordered">

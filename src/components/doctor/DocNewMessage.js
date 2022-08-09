@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useNavigate, useParams} from "react-router-dom";
 import axios from "axios";
-import DoctorHeader from "../headers/DoctorHeader";
+
 
 const DocNewMessage = () =>{
     const{id}=useParams();
@@ -14,7 +14,7 @@ const DocNewMessage = () =>{
         let obj={msg:newMessage,i_id:id};
         axios.post("http://127.0.0.1:8000/api/doctor/convo/message/new",obj)
             .then(resp=>{
-                history("/doctor/inbox/"+id);
+                history("/doctor/conversation/"+id);
             }).catch(err=>{
             console.log(err.response.data);
         });
@@ -22,9 +22,6 @@ const DocNewMessage = () =>{
 
     return(
         <div className="container">
-            <br/>
-            <DoctorHeader/>
-            <br/>
             <h5>Send New Message</h5>
             <form action="">
                 <label htmlFor="new" className="form-label">New Message</label>

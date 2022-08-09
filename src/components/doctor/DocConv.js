@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link, useNavigate, useParams} from "react-router-dom";
 import axios from "axios";
-import DoctorHeader from "../headers/DoctorHeader";
 
 const DocConv = () =>{
 
@@ -38,34 +36,37 @@ const DocConv = () =>{
 
     return (
         <div className="container">
-            <br/>
-            <DoctorHeader/>
-            <br/>
+
             <h5>Conversation</h5>
-            <table className="table table-bordered">
-                <tr className="table-primary">
-                    <th className="table-primary">Conversation ID</th>
-                    <th className="table-primary">Patient ID</th>
-                    <th className="table-primary">Message</th>
-                    <th className="table-primary">Reply</th>
-                    <th className="table-primary">Action</th>
+            <table className="table table-sm">
+                <thead>
+                <tr>
+                    <th>Patient ID</th>
+                    <th>Message</th>
+                    <th>Reply</th>
+                    <th>Action</th>
 
                 </tr>
-                {
-                    convos.map((item, i) => (
-                        <tr key={i}>
-                            <td>{item.conv_id}</td>
-                            <td>{item.patient_id}</td>
-                            <td>{item.message}</td>
-                            <td>{item.reply}</td>
-                            <td><Link to={'/doctor/conversation/reply/'+item.conv_id}>Reply</Link></td>
-                            <br/>
-                        </tr>
-                    ))
-                }
+                </thead>
+               <tbody>
+               {
+                   convos.map((item, i) => (
+                       <tr key={i} className="table-hover table-sm">
+                           <td>{item.patient_id}</td>
+                           <td>{item.message}</td>
+                           <td>{item.reply}</td>
+                           <td>{ item.reply==="" ? <Link to={'/doctor/conversation/reply/'+item.conv_id}> <i className="icon material-symbols-outlined">
+                               reply
+                           </i>                    </Link> : "" }</td>
+                           <br/>
+                       </tr>
+                   ))
+               }
+               </tbody>
+
             </table> <br/>
-            <Link to={"/doctor/conversation/message/new/"+id} className="btn btn-outline-success">New Message</Link>&nbsp;
-            <button className="btn btn-outline-danger" onClick={finishAppointment}>Finish Appointment</button>
+            <Link to={"/doctor/conversation/message/new/"+id} className="btn btn-outline-success btn-sm"><i className="icon material-symbols-outlined">add</i></Link>&nbsp;
+            <button className="btn btn-outline-danger btn-sm" onClick={finishAppointment}><i className="icon material-symbols-outlined">check_circle_outline</i></button>
         </div>
     )
 }

@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
-import DoctorHeader from "../headers/DoctorHeader";
+
 
 const DocPayment = () =>{
     const[amount,setAmount]=useState("");
@@ -50,24 +49,26 @@ const DocPayment = () =>{
 
     return(
         <div className="container">
-            <br/>
-            <DoctorHeader/>
-            <br/>
             <h4>Remuneration Profile</h4>
             <form action="">
-                <label htmlFor="amount" className="form-label">Amount $</label>
-                <input type="text" name="" id="amount" className="form-control" value={amount} onChange={(e)=>setAmount(e.target.value)}/>
-                <label htmlFor="disc_per" className="form-label">Discount Percentage</label>
-                <select name="" id="" className="form-select" value={discount} onChange={(e)=>setDiscount(e.target.value)}>
-                    <option value="" selected>Choose An Option</option>
-                    <option value="5">5%</option>
-                    <option value="15">15%</option>
-                    <option value="25">25%</option>
-                    <option value="35">35%</option>
-                    <option value="50">50%</option>
-                </select>
+                <div className="form-group">
+                    <label htmlFor="amount" className="form-label">Amount $</label>
+                    <input type="text" name="" id="amount" className="form-control" value={amount} onChange={(e)=>setAmount(e.target.value)}/>
+                </div>
+               <div className="form-group">
+                   <label htmlFor="disc_per" className="form-label">Discount Percentage</label>
+                   <select name="" id="" className="form-select" value={discount} onChange={(e)=>setDiscount(e.target.value)}>
+                       <option value="" selected>Choose An Option</option>
+                       <option value="5">5%</option>
+                       <option value="15">15%</option>
+                       <option value="25">25%</option>
+                       <option value="35">35%</option>
+                       <option value="50">50%</option>
+                   </select>
+               </div>
+
             </form> <br/>
-            <button className="btn btn-outline-success" onClick={saveChanges}>Save Changes</button>
+            <button className="btn btn-outline-success btn-sm" onClick={saveChanges}><i className="icon material-symbols-outlined">save</i></button>
         </div>
     )
 

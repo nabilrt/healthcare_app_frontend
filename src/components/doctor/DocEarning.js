@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
-import DoctorHeader from "../headers/DoctorHeader";
+
 import {useNavigate} from "react-router-dom";
 
 const DocEarning = () =>{
@@ -30,28 +29,30 @@ const DocEarning = () =>{
 
     return(
         <div className="container">
-            <br/>
-            <DoctorHeader/>
-            <br/>
             <h4>Earning Details</h4>
             <small>Checkout your earnings</small> <br/> <br/>
-            <table className="table table-bordered">
-                <tr className="table-primary">
-                    <th className="table-primary">Appointment ID</th>
-                    <th className="table-primary">Patient ID</th>
-                    <th className="table-primary">Amount</th>
+            <table className="table table-responsive-sm">
+                <thead>
+                <tr>
+                    <th>Appointment ID</th>
+                    <th>Patient ID</th>
+                    <th>Amount</th>
 
                 </tr>
-                {
-                   earning.map((item, i) => (
-                        <tr key={i}>
-                            <td>{item.appointment_id}</td>
-                            <td>{item.patient_id}</td>
-                            <td>{item.paid_amount}$</td>
-                            <br/>
-                        </tr>
-                    ))
-                }
+                </thead>
+              <tbody>
+              {
+                  earning.map((item, i) => (
+                      <tr key={i} className="table-sm">
+                          <td>{item.appointment_id}</td>
+                          <td>{item.patient_id}</td>
+                          <td>{item.paid_amount}$</td>
+                          <br/>
+                      </tr>
+                  ))
+              }
+              </tbody>
+
             </table>
         </div>
     )

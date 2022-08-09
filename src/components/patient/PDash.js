@@ -1,7 +1,5 @@
 import React from "react";
-import TestHeader from "../headers/TestHeader";
 import PatientDash from "./PatientDash";
-import {Link} from "react-router-dom";
 
 const PDash=()=>{
 
@@ -9,8 +7,6 @@ const PDash=()=>{
         <div className="layout-wrapper layout-content-navbar">
             <div className="layout-container">
 
-
-               <TestHeader></TestHeader>
 
                 <div className="layout-page">
                     <nav

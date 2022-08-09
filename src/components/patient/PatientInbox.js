@@ -2,7 +2,6 @@ import React from "react";
 import {useEffect, useState} from "react";
 import {Link, useNavigate} from "react-router-dom";
 import axios from "axios";
-import PatientHeader from "../headers/PatientHeader";
 
 const PatientInbox = () =>{
     const[inbox,setInbox]=useState([]);
@@ -20,7 +19,7 @@ const PatientInbox = () =>{
 
         }).catch(
             err=>{
-                history('/login');
+            //    history('/login');
                 console.log(err.response.data);
             });
 
@@ -30,15 +29,13 @@ const PatientInbox = () =>{
     return(
 
 
-            <div className="content-wrapper">
-                <PatientHeader/>
+            <div className="container">
 
-                <div className="container-xxl flex-grow-1 container-p-y">
-                    <div className="card">
-                        <h5 className="card-header">Inbox</h5>
-                        <div className="table-responsive text-nowrap">
-                            <table className="table">
-                                <thead className="table-dark">
+                <br/>
+                <h4>Inbox</h4>
+                <small>Contains all the conversations</small> <br/>
+                <table className="table table-hover">
+                                <thead>
                                 <tr>
                                     <th>Inbox ID</th>
                                     <th>Doctor ID</th>
@@ -46,24 +43,24 @@ const PatientInbox = () =>{
                                     <th>Action</th>
                                 </tr>
                                 </thead>
-                                <tbody className="table-border-bottom-0">
+                                <tbody>
 
                                 {
                                     inbox.map((item, i) => (
-                                        <tr key={i}>
+                                        <tr key={i} className="table-hover small">
                                             <td>{item.inbox_id}</td>
                                             <td>{item.doctor_id}</td>
                                             <td>{item.appointment_id}</td>
-                                            <td><Link to={"/patient/inbox/"+item.inbox_id} className="btn btn-outline-dark">Go To Chat</Link></td>
+                                            <td><Link to={"/patient/inbox/"+item.inbox_id} className="btn btn-outline-dark btn-sm"><i className="icon material-symbols-outlined">
+                                                chat
+                                            </i></Link></td>
                                             <br/>
                                         </tr>
                                     ))
                                 }
                                 </tbody>
                             </table>
-                        </div>
-                    </div>
-                </div>
+
             </div>
 
 

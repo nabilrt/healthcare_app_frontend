@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import axios from "axios";
-import {Link, useParams} from "react-router-dom";
-import PatientHeader from "../headers/PatientHeader";
+
 const MembershipInfo = () => {
 
 

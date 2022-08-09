@@ -1,9 +1,7 @@
 import React, {useState} from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 import {Link, useNavigate} from 'react-router-dom';
-import Header from "./Header";
-import BasicHeader from "./headers/BasicHeader";
+
 
 const Login = () =>{
    // let[token, setToken]= useState("");
@@ -12,6 +10,8 @@ const Login = () =>{
     const history = useNavigate();
 
     const loginSubmit= ()=>{
+        console.log(name);
+        console.log(password);
         var obj = {username: name, password: password};
         axios.post("http://127.0.0.1:8000/api/login",obj)
             .then(resp=>{
@@ -59,24 +59,61 @@ const Login = () =>{
     }
 
     return (
-        <div className="container">
-            <br/>
-            <BasicHeader></BasicHeader>
-            <br/>
-            <h3>Login to your system</h3>
-            <small>Enter correct credentials to login</small> <br/> <br/>
-            <form className="form-group">
-                <label htmlFor="uname">Username</label> <br/>
-                <input type="text" name="username" value={name} onChange={(e)=>setName(e.target.value)} id="uname" className="form-control-sm" placeholder="Enter your username"/> <br/> <br/>
-                <label htmlFor="pass">Password</label><br/>
-                <input type="password" name="pass" value={password} id="pass" onChange={(e)=>setPassword(e.target.value)} className="form-control-sm" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"/>
-            </form> <br/>
-            <button type="button" onClick={loginSubmit} className="btn btn-outline-info">Login</button> <br/>
-            <span className="text-danger">
-                <p id="msg"></p>
-            </span>
-            <Link to="/contact/support"><p>Contact Support</p></Link>
+        <div className="wrapper">
+            <section className="sign-in-page">
+                <div id="container-inside">
+                    <div id="circle-small"></div>
+                    <div id="circle-medium"></div>
+                    <div id="circle-large"></div>
+                    <div id="circle-xlarge"></div>
+                    <div id="circle-xxlarge"></div>
+                </div>
+                <div className="container p-0">
+                    <div className="row no-gutters">
+                        <div className="col-md-6 text-center pt-5">
+                            <div className="sign-in-detail text-white">
+                                <a className="" href="#"><img src="../assets/images/default.png"
+                                                                               className="img-fluid" alt="logo"
+                                                                               /></a>
+
+                            </div>
+                        </div>
+                        <div className="col-md-6 bg-white pt-5 pt-5 pb-lg-0 pb-5">
+                            <div className="sign-in-from">
+                                <h1 className="mb-0">Sign in</h1>
+                                <p>Enter your User ID and Password</p>
+                                <form className="mt-4">
+                                    <div className="form-group">
+                                        <label className="form-label" htmlFor="exampleInputEmail1">User ID</label>
+                                        <input type="text" className="form-control mb-0" id="exampleInputEmail1" value={name} onChange={(e)=>setName(e.target.value)}
+                                               placeholder="ASHCS-X-X"/>
+                                    </div>
+                                    <div className="form-group">
+                                        <label className="form-label" htmlFor="exampleInputPassword1">Password</label>
+
+                                        <input type="password" className="form-control mb-0" id="exampleInputPassword1" value={password}  onChange={(e)=>setPassword(e.target.value)}
+                                               placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"/>
+                                    </div>
+                                    <div className="d-inline-block w-100">
+
+                                        <button type="button" className="btn btn-outline-primary mb-1 float-start" onClick={loginSubmit}><i className="icon material-symbols-outlined">login</i></button>
+                                    </div>
+                                    <div className="sign-info">
+                                        <span
+                                            className="dark-color d-inline-block line-height-2">Don't have an account? <Link
+                                            to="/register">Sign up</Link></span>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
         </div>
+
+
+
     )
 }
 

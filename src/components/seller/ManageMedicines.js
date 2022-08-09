@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 import {Link, useNavigate} from "react-router-dom";
-import SellerHeader from "../headers/SellerHeader";
+
 
 const ManageMedicines = () =>{
     const[medicines,setMedicines]=useState([]);
@@ -26,9 +26,7 @@ const ManageMedicines = () =>{
 
     return(
         <div className="container">
-            <br/>
-            <SellerHeader/>
-            <br/>
+
             <h4>All Medicines</h4> <br/>
             <table className="table table-bordered">
                 <tr className="table-primary">

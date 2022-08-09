@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 import {Link, useNavigate, useParams} from "react-router-dom";
-import PatientHeader from "../headers/PatientHeader";
+
 const DocAppointment = () => {
     const{id}=useParams();
     const [appDate,setAppDate]=useState("");
@@ -40,9 +40,7 @@ const DocAppointment = () => {
     return(
         <div className="container">
             <br/>
-                <PatientHeader>
 
-                </PatientHeader>
             <h4>Take appointment</h4>
             <br/>
             <form action="">

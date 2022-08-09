@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Link} from "react-router-dom";
+
 import axios from "axios";
-import PatientHeader from "../headers/PatientHeader";
+
 
 const PatientPrevReview = () =>{
     const[reviews,setReviews]=useState([]);
@@ -24,9 +24,7 @@ const PatientPrevReview = () =>{
 
     return(
         <div className="container">
-            <br/>
-            <PatientHeader/>
-            <br/>
+
             <h4>Your Previous Feedbacks</h4> <br/>
             <table className="table table-bordered">
                 <tr className="table-primary">

@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import PatientHeader from "../headers/PatientHeader";
 import axios from "axios";
-import SellerHeader from "../headers/SellerHeader";
+
 import {Link} from "react-router-dom";
 
 const Shop = () =>{
@@ -36,9 +35,7 @@ const Shop = () =>{
 
     return(
         <div className="container">
-            <br/>
-            <PatientHeader/>
-            <br/>
+
             <h4>Search Medicines</h4> <br/>
             <form action="">
                 <label htmlFor="key" className="form-label">Search by Name</label>

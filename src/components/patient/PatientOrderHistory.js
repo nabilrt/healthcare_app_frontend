@@ -1,9 +1,7 @@
 import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
-import {Link} from "react-router-dom";
-import SellerHeader from "../headers/SellerHeader";
-import PatientHeader from "../headers/PatientHeader";
+
 
 const PatientOrderHistory = () =>{
     const [orders,setOrders]=useState([]);
@@ -25,9 +23,7 @@ const PatientOrderHistory = () =>{
 
     return(
         <div className="container">
-            <br/>
-            <PatientHeader/>
-            <br/>
+
             <h4>My Orders</h4>
              <br/>
             <table className="table table-bordered">

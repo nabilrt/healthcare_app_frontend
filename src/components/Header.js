@@ -93,8 +93,8 @@ function Header(){
             <Routes>
 
                 (Basic Pages)
-                <Route index element={<Home />} />
-                <Route path="/home" element={<Home/>}/>
+                <Route index element={<Login />} />
+                <Route path="/home" element={<Login/>}/>
                 <Route path="/register" element={<Register/>} />
                 <Route path="/login" element={<Login/>} />
                 <Route path="/about" element={<About/>}></Route>
